@@ -21,7 +21,7 @@
     self = [super init];
     if (self) {
 
-        const int defaultSize = 3;
+        const int defaultSize = 6;
 
         _board = [[Board alloc] initWithSize:defaultSize];
         _status = [[GameStatus alloc] initNew];
