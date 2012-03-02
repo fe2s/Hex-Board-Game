@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[Board findLeftToRightPath]:Board.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "h">
+            </PersistentString>
+            <PersistentString
+               value = "[self isRightEdge:h]">
+            </PersistentString>
+            <PersistentString
+               value = "neighbours">
+            </PersistentString>
+            <PersistentString
+               value = "[stack isEmpty]">
+            </PersistentString>
+            <PersistentString
+               value = "h.i">
+            </PersistentString>
+            <PersistentString
+               value = "(Hexagon *)((NSObject *)[(((&apos;Board&apos; *) (self)))-&gt;hexagons objectAtIndex:0])">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[Board initWithSize:]:Board.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "hex.i">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[Board isRightEdge:]:Board.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "(*hex).i">
+            </PersistentString>
+            <PersistentString
+               value = "[hex i]">
+            </PersistentString>
+            <PersistentString
+               value = "*hex">
+            </PersistentString>
+            <PersistentString
+               value = "hex.i">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

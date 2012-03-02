@@ -1,0 +1,356 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FC3FE9D514F448A70092543C /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3FE9D414F448A70092543C /* Stack.m */; };
+		FC49E6DD14EB05660067166D /* BoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC49E6DC14EB05660067166D /* BoardView.m */; };
+		FC8B629914E997AE0084B74A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC8B629814E997AE0084B74A /* UIKit.framework */; };
+		FC8B629B14E997AE0084B74A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC8B629A14E997AE0084B74A /* Foundation.framework */; };
+		FC8B629D14E997AE0084B74A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC8B629C14E997AE0084B74A /* CoreGraphics.framework */; };
+		FC8B62A314E997AE0084B74A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FC8B62A114E997AE0084B74A /* InfoPlist.strings */; };
+		FC8B62A514E997AE0084B74A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8B62A414E997AE0084B74A /* main.m */; };
+		FC8B62A914E997AE0084B74A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8B62A814E997AE0084B74A /* AppDelegate.m */; };
+		FC8B62AC14E997AE0084B74A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8B62AB14E997AE0084B74A /* ViewController.m */; };
+		FC8B62AF14E997AE0084B74A /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC8B62AD14E997AE0084B74A /* ViewController.xib */; };
+		FC8B62B714E997E40084B74A /* MainView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8B62B614E997E40084B74A /* MainView.m */; };
+		FC8B62BD14E9A7510084B74A /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8B62BC14E9A7510084B74A /* Game.m */; };
+		FC8B62C114E9A7A10084B74A /* Board.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8B62C014E9A7A10084B74A /* Board.m */; };
+		FC8B62C414E9A96B0084B74A /* Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8B62C314E9A96B0084B74A /* Hex.m */; };
+		FC8B62C814E9B9900084B74A /* HexView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8B62C714E9B9900084B74A /* HexView.m */; };
+		FCE8627C14ED9A9500AEA212 /* GameStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE8627C14ED9A9500AEA211 /* GameStatus.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		FC3FE9D314F448A70092543C /* Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stack.h; sourceTree = "<group>"; };
+		FC3FE9D414F448A70092543C /* Stack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stack.m; sourceTree = "<group>"; };
+		FC49E6DB14EB05660067166D /* BoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardView.h; sourceTree = "<group>"; };
+		FC49E6DC14EB05660067166D /* BoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardView.m; sourceTree = "<group>"; };
+		FC8B629414E997AE0084B74A /* Hex Board Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hex Board Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC8B629814E997AE0084B74A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		FC8B629A14E997AE0084B74A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FC8B629C14E997AE0084B74A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		FC8B62A014E997AE0084B74A /* Hex Board Game-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Hex Board Game-Info.plist"; sourceTree = "<group>"; };
+		FC8B62A214E997AE0084B74A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FC8B62A414E997AE0084B74A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FC8B62A614E997AE0084B74A /* Hex Board Game-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Hex Board Game-Prefix.pch"; sourceTree = "<group>"; };
+		FC8B62A714E997AE0084B74A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FC8B62A814E997AE0084B74A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FC8B62AA14E997AE0084B74A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		FC8B62AB14E997AE0084B74A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		FC8B62AE14E997AE0084B74A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		FC8B62B514E997E40084B74A /* MainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainView.h; sourceTree = "<group>"; };
+		FC8B62B614E997E40084B74A /* MainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainView.m; sourceTree = "<group>"; };
+		FC8B62BB14E9A7510084B74A /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
+		FC8B62BC14E9A7510084B74A /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
+		FC8B62BF14E9A7A10084B74A /* Board.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Board.h; sourceTree = "<group>"; };
+		FC8B62C014E9A7A10084B74A /* Board.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Board.m; sourceTree = "<group>"; };
+		FC8B62C214E9A96B0084B74A /* Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hex.h; sourceTree = "<group>"; };
+		FC8B62C314E9A96B0084B74A /* Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hex.m; sourceTree = "<group>"; };
+		FC8B62C614E9B9900084B74A /* HexView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HexView.h; sourceTree = "<group>"; };
+		FC8B62C714E9B9900084B74A /* HexView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HexView.m; sourceTree = "<group>"; };
+		FCE8627C14ED9A9500AEA210 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		FCE8627C14ED9A9500AEA211 /* GameStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameStatus.m; sourceTree = "<group>"; };
+		FCE8627C14ED9A9500AEA213 /* GameStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameStatus.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FC8B629114E997AE0084B74A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC8B629914E997AE0084B74A /* UIKit.framework in Frameworks */,
+				FC8B629B14E997AE0084B74A /* Foundation.framework in Frameworks */,
+				FC8B629D14E997AE0084B74A /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FC49E6D714EB005E0067166D /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				FC3FE9D314F448A70092543C /* Stack.h */,
+				FC3FE9D414F448A70092543C /* Stack.m */,
+			);
+			name = utils;
+			sourceTree = "<group>";
+		};
+		FC8B628914E997AE0084B74A = {
+			isa = PBXGroup;
+			children = (
+				FC8B629E14E997AE0084B74A /* Hex Board Game */,
+				FC8B629714E997AE0084B74A /* Frameworks */,
+				FC8B629514E997AE0084B74A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FC8B629514E997AE0084B74A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FC8B629414E997AE0084B74A /* Hex Board Game.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FC8B629714E997AE0084B74A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FC8B629814E997AE0084B74A /* UIKit.framework */,
+				FC8B629A14E997AE0084B74A /* Foundation.framework */,
+				FC8B629C14E997AE0084B74A /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FC8B629E14E997AE0084B74A /* Hex Board Game */ = {
+			isa = PBXGroup;
+			children = (
+				FC49E6D714EB005E0067166D /* utils */,
+				FC8B62C514E9B9600084B74A /* view */,
+				FC8B62BE14E9A75A0084B74A /* domain */,
+				FC8B62A714E997AE0084B74A /* AppDelegate.h */,
+				FC8B62A814E997AE0084B74A /* AppDelegate.m */,
+				FC8B62AA14E997AE0084B74A /* ViewController.h */,
+				FC8B62AB14E997AE0084B74A /* ViewController.m */,
+				FC8B62AD14E997AE0084B74A /* ViewController.xib */,
+				FC8B629F14E997AE0084B74A /* Supporting Files */,
+			);
+			path = "Hex Board Game";
+			sourceTree = "<group>";
+		};
+		FC8B629F14E997AE0084B74A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FC8B62A014E997AE0084B74A /* Hex Board Game-Info.plist */,
+				FC8B62A114E997AE0084B74A /* InfoPlist.strings */,
+				FC8B62A414E997AE0084B74A /* main.m */,
+				FC8B62A614E997AE0084B74A /* Hex Board Game-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FC8B62BE14E9A75A0084B74A /* domain */ = {
+			isa = PBXGroup;
+			children = (
+				FCE8627C14ED9A9500AEA213 /* GameStatus.h */,
+				FCE8627C14ED9A9500AEA211 /* GameStatus.m */,
+				FC8B62BB14E9A7510084B74A /* Game.h */,
+				FC8B62BC14E9A7510084B74A /* Game.m */,
+				FC8B62BF14E9A7A10084B74A /* Board.h */,
+				FC8B62C014E9A7A10084B74A /* Board.m */,
+				FC8B62C214E9A96B0084B74A /* Hex.h */,
+				FC8B62C314E9A96B0084B74A /* Hex.m */,
+				FCE8627C14ED9A9500AEA210 /* Player.h */,
+			);
+			name = domain;
+			sourceTree = "<group>";
+		};
+		FC8B62C514E9B9600084B74A /* view */ = {
+			isa = PBXGroup;
+			children = (
+				FC8B62B514E997E40084B74A /* MainView.h */,
+				FC8B62B614E997E40084B74A /* MainView.m */,
+				FC8B62C614E9B9900084B74A /* HexView.h */,
+				FC8B62C714E9B9900084B74A /* HexView.m */,
+				FC49E6DB14EB05660067166D /* BoardView.h */,
+				FC49E6DC14EB05660067166D /* BoardView.m */,
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FC8B629314E997AE0084B74A /* Hex Board Game */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FC8B62B214E997AE0084B74A /* Build configuration list for PBXNativeTarget "Hex Board Game" */;
+			buildPhases = (
+				FC8B629014E997AE0084B74A /* Sources */,
+				FC8B629114E997AE0084B74A /* Frameworks */,
+				FC8B629214E997AE0084B74A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Hex Board Game";
+			productName = "Hex Board Game";
+			productReference = FC8B629414E997AE0084B74A /* Hex Board Game.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FC8B628B14E997AE0084B74A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = FC8B628E14E997AE0084B74A /* Build configuration list for PBXProject "Hex Board Game" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = FC8B628914E997AE0084B74A;
+			productRefGroup = FC8B629514E997AE0084B74A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FC8B629314E997AE0084B74A /* Hex Board Game */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FC8B629214E997AE0084B74A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC8B62A314E997AE0084B74A /* InfoPlist.strings in Resources */,
+				FC8B62AF14E997AE0084B74A /* ViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FC8B629014E997AE0084B74A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC8B62A514E997AE0084B74A /* main.m in Sources */,
+				FC8B62A914E997AE0084B74A /* AppDelegate.m in Sources */,
+				FC8B62AC14E997AE0084B74A /* ViewController.m in Sources */,
+				FC8B62B714E997E40084B74A /* MainView.m in Sources */,
+				FC8B62BD14E9A7510084B74A /* Game.m in Sources */,
+				FC8B62C114E9A7A10084B74A /* Board.m in Sources */,
+				FC8B62C414E9A96B0084B74A /* Hex.m in Sources */,
+				FC8B62C814E9B9900084B74A /* HexView.m in Sources */,
+				FC49E6DD14EB05660067166D /* BoardView.m in Sources */,
+				FC3FE9D514F448A70092543C /* Stack.m in Sources */,
+				FCE8627C14ED9A9500AEA212 /* GameStatus.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FC8B62A114E997AE0084B74A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FC8B62A214E997AE0084B74A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		FC8B62AD14E997AE0084B74A /* ViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FC8B62AE14E997AE0084B74A /* en */,
+			);
+			name = ViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FC8B62B014E997AE0084B74A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		FC8B62B114E997AE0084B74A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FC8B62B314E997AE0084B74A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Hex Board Game/Hex Board Game-Prefix.pch";
+				INFOPLIST_FILE = "Hex Board Game/Hex Board Game-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		FC8B62B414E997AE0084B74A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Hex Board Game/Hex Board Game-Prefix.pch";
+				INFOPLIST_FILE = "Hex Board Game/Hex Board Game-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FC8B628E14E997AE0084B74A /* Build configuration list for PBXProject "Hex Board Game" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC8B62B014E997AE0084B74A /* Debug */,
+				FC8B62B114E997AE0084B74A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FC8B62B214E997AE0084B74A /* Build configuration list for PBXNativeTarget "Hex Board Game" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC8B62B314E997AE0084B74A /* Debug */,
+				FC8B62B414E997AE0084B74A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FC8B628B14E997AE0084B74A /* Project object */;
+}
