@@ -100,7 +100,6 @@
 }
 
 
-// Blue: left -> right , Red: top -> bottom
 - (Boolean)checkForWinner:(id<Player>)player {
 
     // visited flags
@@ -148,6 +147,16 @@
     }
 
     return false;
+}
+
+- (NSMutableArray *)emptyHexes {
+    NSMutableArray * empty = [[NSMutableArray alloc] init] ;
+    for(Hex *h in _hexes){
+        if (h.player == nil){
+            [empty addObject:h];
+        }
+    }
+    return empty;
 }
 
 

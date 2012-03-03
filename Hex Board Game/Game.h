@@ -15,9 +15,11 @@
 
 @property(nonatomic, readonly, strong) Board *board;
 
-- (void)onTurnMade;
+//- (void)onTurnMade;
 
 - (GameStatus *)status;
+
+- (bool) humanTurn: (CGPoint) touchLocation;
 
 
 @end

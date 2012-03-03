@@ -2,12 +2,13 @@
 //  Created by Oleksiy Dyagilev on 3/3/12.
 //
 
-#import "Human.h"
-#import "Hex.h"
+#import "RandomAI.h"
 #import "Board.h"
+#import "Hex.h"
 
 
-@implementation Human {
+@implementation RandomAI {
+
     int _id;
     bool _horizontal;
     NSString *_name;
@@ -24,14 +25,12 @@
     return self;
 }
 
-
 - (int)id {
     return _id;
 }
 
 - (NSString *)name {
     return _name;
-
 }
 
 - (bool)horizontal {
@@ -39,11 +38,17 @@
 }
 
 - (bool)isHuman {
-    return true;
+    return false;
+
 }
 
 - (Hex *)makeTurn:(Board *)board {
-    @throw [NSException exceptionWithName:@"I'm too stupid" reason:nil userInfo:nil];
+
+    NSMutableArray *emptyHexes = board.emptyHexes;
+
+    int random = arc4random() % [emptyHexes count];
+
+    return [emptyHexes objectAtIndex:random];
 }
 
 

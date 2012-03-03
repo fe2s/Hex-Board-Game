@@ -79,26 +79,12 @@
     // assume 1 touch for simplicity 
     UITouch *touch = [[touches allObjects] objectAtIndex:0];
     CGPoint touchLocation = [touch locationInView:self];
-
-    NSMutableArray *hexes = _game.board.hexes;
-
-    int hexCount = [hexes count];
-
-    for (int i = 0; i < hexCount; i++) {
-        Hex *hex = (Hex *) [hexes objectAtIndex:i];
-        if ([hex contains:touchLocation] && hex.player == nil) {
-            NSLog(@"Hit hex #%d", i);
-
-            hex.player = [_game.status nextTurnPlayer];
-
-            [_game onTurnMade];
-            [self setNeedsDisplay];
-            break;
-        }
-    }
-
-
     NSLog(@"%f, %f", touchLocation.x, touchLocation.y);
+
+    bool turnMade = [_game humanTurn:touchLocation];
+    if (turnMade){
+        [self setNeedsDisplay];
+    }
 
 }
 

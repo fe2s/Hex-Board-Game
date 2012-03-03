@@ -18,4 +18,6 @@
 
 - (Boolean)checkForWinner:(id<Player>)player;
 
+- (NSMutableArray *) emptyHexes;
+
 @end
