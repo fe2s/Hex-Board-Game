@@ -10,38 +10,43 @@
 
 @implementation GameStatus {
 
-@private Player _nextTurnPlayer;
-@private bool _isEnded;
-@private Player _winner;
+    id <Player> _firstPlayer;
+    id <Player> _secondPlayer;
+
+    id <Player> _nextTurnPlayer;
+    bool _isEnded;
+    id <Player> _winner;
+
+    NSString *test;
 
 }
 
-- (id)initNew {
+- (id)initNew:(id <Player>)firstPlayer:(id <Player>)secondPlayer {
     self = [super init];
     if (self) {
-        _winner = None;
         _isEnded = false;
-        _nextTurnPlayer = Red; // OK ?
+        _firstPlayer = firstPlayer;
+        _secondPlayer = secondPlayer;
+        _nextTurnPlayer = firstPlayer;
     }
     return self;
 }
 
-- (Player)_inversePlayer :(Player)p {
-    return p == Blue ? Red : Blue;
+- (id <Player>)_inversePlayer :(id <Player>)p {
+    return p == _firstPlayer ? _secondPlayer : _firstPlayer;
 }
 
-- (Player)prevTurnPlayer {
+- (id <Player>)prevTurnPlayer {
     // not abs correct
     return [self _inversePlayer:_nextTurnPlayer];
 }
 
-- (Player)nextTurnPlayer {
+- (id <Player>)nextTurnPlayer {
     return _nextTurnPlayer;
 }
 
-- (void)victory:(Player)winner {
+- (void)victory:(id <Player>)winner {
     _winner = winner;
-    _nextTurnPlayer = None;
     _isEnded = true;
 }
 
@@ -53,8 +58,8 @@
     return _isEnded;
 }
 
-- (Player)winner {
-    return _isEnded ? _winner : None;
+- (id <Player>)winner {
+    return _isEnded ? _winner : nil;
 }
 
 @end

@@ -15,7 +15,6 @@
 @synthesize player;
 @synthesize i;
 @synthesize j;
-@synthesize visitedFlag;
 
 - (Boolean) contains: (CGPoint) point {
    

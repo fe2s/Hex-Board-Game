@@ -7,10 +7,15 @@
 //
 
 #import "Game.h"
+#import "Player.h"
+#import "Human.h"
 
 @implementation Game {
 
-@private GameStatus *_status;
+    GameStatus *_status;
+
+    id <Player> _firstPlayer;
+    id <Player> _secondPlayer;
 
 }
 
@@ -21,10 +26,14 @@
     self = [super init];
     if (self) {
 
+        _firstPlayer = [[Human alloc] initWithId:1 horizontal:true name:@"vasya"];
+        _secondPlayer = [[Human alloc] initWithId:2 horizontal:false name:@"petya"];
+
         const int defaultSize = 6;
 
         _board = [[Board alloc] initWithSize:defaultSize];
-        _status = [[GameStatus alloc] initNew];
+
+        _status = [[GameStatus alloc] initNew:_firstPlayer :_secondPlayer];
 
     }
     return self;
@@ -36,7 +45,7 @@
     [_status toggleTurn];
 
     // check for winner
-    Player player = [_status prevTurnPlayer];
+    id<Player> player = [_status prevTurnPlayer];
 
     if ([_board checkForWinner:player]) {
         [_status victory:player];

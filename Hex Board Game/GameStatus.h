@@ -12,19 +12,19 @@
 
 }
 
-- (id)initNew;
+- (id)initNew:(id <Player>)firstPlayer:(id <Player>)secondPlayer;
 
-- (Player)prevTurnPlayer;
+- (id <Player>)prevTurnPlayer;
 
-- (Player)nextTurnPlayer;
+- (id <Player>)nextTurnPlayer;
 
-- (void)victory:(Player)aWinner;
+- (void)victory:(id <Player>)aWinner;
 
 - (void)toggleTurn;
 
 - (bool)isEnded;
 
-- (Player)winner;
+- (id <Player>)winner;
 
 
 @end

@@ -11,23 +11,23 @@
 
 @implementation HexView {
 
-@private Hex *_hex;
+    Hex *_hex;
+
 }
 
 
-- (HexView *)initWithHex :(Hex *)aHex {
+- (HexView *)initWithHex :(Hex *)hex {
 
     self = [super init];
     if (self) {
-        self->_hex = aHex;
+        _hex = hex;
     }
     return self;
 
 }
 
-- (void)draw:(CGContextRef)c :(CGPoint)centerPoint {
-
-    int edgeSize = self->_hex.edgeSize;
+- (void)drawHedgeBorders:(CGContextRef)c centerPoint:(CGPoint)centerPoint {
+    int edgeSize = _hex.edgeSize;
 
     CGFloat color[4] = {0.0f, 0.0f, 0.0f, 1.0f};
     CGContextSetStrokeColor(c, color);
@@ -66,13 +66,14 @@
 
 
     CGContextStrokePath(c);
+}
 
-    // draw stone
-
-    if (_hex.player != None) {
+- (void)drawStone:(CGContextRef)c centerPoint:(CGPoint)centerPoint {
+    if (_hex.player != nil) {
 
         CGColorRef color;
-        if (_hex.player == Red) {
+        // TODO: XXX
+        if (_hex.player.id == 1) {
             color = [UIColor redColor].CGColor;
         } else {
             color = [UIColor blueColor].CGColor;
@@ -81,7 +82,7 @@
         CGContextSetLineWidth(c, 1);
         CGContextSetStrokeColorWithColor(c, color);
 
-        float radius = edgeSize / 1.5;
+        float radius = _hex.edgeSize / 1.5;
 
         CGRect rectangle = CGRectMake(centerPoint.x - radius,
                 centerPoint.y - radius,
@@ -91,7 +92,13 @@
         CGContextSetFillColorWithColor(c, color);
         CGContextFillEllipseInRect(c, rectangle);
     }
+}
 
+- (void)draw:(CGContextRef)c :(CGPoint)centerPoint {
+
+    [self drawHedgeBorders:c centerPoint:centerPoint];
+
+    [self drawStone:c centerPoint:centerPoint];
 
 }
 

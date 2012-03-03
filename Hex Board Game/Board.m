@@ -12,8 +12,8 @@
 
 @implementation Board
 
-@synthesize size=_size;
-@synthesize hexes=_hexes;
+@synthesize size = _size;
+@synthesize hexes = _hexes;
 
 
 - (id)initWithSize:(int)theSize {
@@ -22,7 +22,7 @@
     if (self) {
         _size = theSize;
 
-        // init hexagons
+        // init hexes
         _hexes = [[NSMutableArray alloc] initWithCapacity:_size];
         int hexNumber = pow(_size, 2);
 
@@ -34,7 +34,7 @@
             hex.edgeSize = 20;
             hex.j = i / _size;
             hex.i = i % _size;
-            hex.player = None;
+//            hex.player = None;
 
             // can optimize
             float deltaX = -(i / _size) * hex.edgeSize * cosf(M_PI/ 6) +
@@ -91,14 +91,6 @@
     return res;
 }
 
-- (void)resetVisitedFlags {
-
-    for (Hex *hex in _hexes) {
-        hex.visitedFlag = false;
-    }
-
-}
-
 - (Boolean)isRightBorder:(Hex *)hex {
     return hex.i == _size - 1;
 }
@@ -109,16 +101,21 @@
 
 
 // Blue: left -> right , Red: top -> bottom
-- (Boolean)checkForWinner:(Player)player {
+- (Boolean)checkForWinner:(id<Player>)player {
 
-    // reset visited flags
-    [self resetVisitedFlags];
+    // visited flags
+    bool visitedHexes[_size][_size];
+    for (int i = 0; i < _size; i++) {
+        for (int j = 0; j < _size; j++) {
+            visitedHexes[i][j] = false;
+        }
+    }
 
     // find start hexes
     Stack *stack = [[Stack alloc] init];
     for (int j = 0; j < _size; j++) {
         Hex *hex;
-        if (player == Blue) {
+        if ([player horizontal]) {
             hex = [self at:0 :j];
         } else {
             hex = [self at:j :0];
@@ -133,16 +130,18 @@
 
         Hex *h = [stack pop];
 
-        if ((player == Blue && [self isRightBorder:h]) ||
-                (player == Red && [self isBottomBorder:h])) {
+        if (([player horizontal] && [self isRightBorder:h]) ||
+                (![player horizontal] && [self isBottomBorder:h])) {
             return true;
         }
 
-        h.visitedFlag = true;
+        visitedHexes[h.i][h.j] = true;
 
         NSMutableArray *neighbours = [self neighbours:h];
         for (Hex *neighbour in neighbours) {
-            if (!neighbour.visitedFlag && (neighbour.player == player)) {
+            bool isVisited = (visitedHexes[neighbour.i][neighbour.j] == true);
+
+            if (!isVisited && (neighbour.player == player)) {
                 [stack push:neighbour];
             }
         }

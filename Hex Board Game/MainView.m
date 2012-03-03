@@ -15,7 +15,7 @@
 
 @implementation MainView {
 
-@private Game *_game;
+    Game *_game;
 
 }
 
@@ -49,17 +49,11 @@
     GameStatus *gameStatus = _game.status;
 
     if ([gameStatus isEnded]) {
-        if ([gameStatus winner] == Red) {
-            labelText = @"Red won!";
-        } else {
-            labelText = @"Blue won!";
-        }
+        labelText = @"Winner: ";
+        labelText = [labelText stringByAppendingString:gameStatus.winner.name];
     } else {
-        if ([gameStatus nextTurnPlayer] == Red) {
-            labelText = @"Next turn - Red";
-        } else {
-            labelText = @"Next turn - Blue";
-        }
+        labelText = @"Next turn: ";
+        labelText = [labelText stringByAppendingString:gameStatus.nextTurnPlayer.name];
     }
 
     nextTurnLabel.text = labelText;
@@ -92,7 +86,7 @@
 
     for (int i = 0; i < hexCount; i++) {
         Hex *hex = (Hex *) [hexes objectAtIndex:i];
-        if ([hex contains:touchLocation] && hex.player == None) {
+        if ([hex contains:touchLocation] && hex.player == nil) {
             NSLog(@"Hit hex #%d", i);
 
             hex.player = [_game.status nextTurnPlayer];

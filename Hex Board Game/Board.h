@@ -16,6 +16,6 @@
 
 - (id)initWithSize:(int)size;
 
-- (Boolean)checkForWinner:(Player)player;
+- (Boolean)checkForWinner:(id<Player>)player;
 
 @end

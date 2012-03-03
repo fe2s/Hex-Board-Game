@@ -8,10 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		FC3FE9D514F448A70092543C /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3FE9D414F448A70092543C /* Stack.m */; };
+		FC47032C15016E8E0004FB52 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC47032B15016E8E0004FB52 /* Foundation.framework */; };
+		FC47032E15016ECA0004FB52 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC47032D15016ECA0004FB52 /* CoreGraphics.framework */; };
+		FC47033015016ED00004FB52 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC47032F15016ED00004FB52 /* UIKit.framework */; };
+		FC47033915016F790004FB52 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC47033815016F790004FB52 /* SenTestingKit.framework */; };
+		FC47033A15016F790004FB52 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC47032F15016ED00004FB52 /* UIKit.framework */; };
+		FC47033B15016F790004FB52 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC47032B15016E8E0004FB52 /* Foundation.framework */; };
+		FC47034115016F790004FB52 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FC47033F15016F790004FB52 /* InfoPlist.strings */; };
 		FC49E6DD14EB05660067166D /* BoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC49E6DC14EB05660067166D /* BoardView.m */; };
-		FC8B629914E997AE0084B74A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC8B629814E997AE0084B74A /* UIKit.framework */; };
-		FC8B629B14E997AE0084B74A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC8B629A14E997AE0084B74A /* Foundation.framework */; };
-		FC8B629D14E997AE0084B74A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC8B629C14E997AE0084B74A /* CoreGraphics.framework */; };
 		FC8B62A314E997AE0084B74A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FC8B62A114E997AE0084B74A /* InfoPlist.strings */; };
 		FC8B62A514E997AE0084B74A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8B62A414E997AE0084B74A /* main.m */; };
 		FC8B62A914E997AE0084B74A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8B62A814E997AE0084B74A /* AppDelegate.m */; };
@@ -23,17 +27,25 @@
 		FC8B62C414E9A96B0084B74A /* Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8B62C314E9A96B0084B74A /* Hex.m */; };
 		FC8B62C814E9B9900084B74A /* HexView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8B62C714E9B9900084B74A /* HexView.m */; };
 		FCE8627C14ED9A9500AEA212 /* GameStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE8627C14ED9A9500AEA211 /* GameStatus.m */; };
+		FCE8627C14ED9A9500AEA215 /* Array2D.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE8627C14ED9A9500AEA214 /* Array2D.m */; };
+		FCE8627C14ED9A9500AEA218 /* Array2DTest.m in Sources */ = {isa = PBXBuildFile; };
+		FCE8627C14ED9A9500AEA21C /* Human.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE8627C14ED9A9500AEA21B /* Human.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FC3FE9D314F448A70092543C /* Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stack.h; sourceTree = "<group>"; };
 		FC3FE9D414F448A70092543C /* Stack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stack.m; sourceTree = "<group>"; };
+		FC47032B15016E8E0004FB52 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FC47032D15016ECA0004FB52 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		FC47032F15016ED00004FB52 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		FC47033715016F790004FB52 /* Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC47033815016F790004FB52 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		FC47033E15016F790004FB52 /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
+		FC47034015016F790004FB52 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FC47034515016F790004FB52 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		FC49E6DB14EB05660067166D /* BoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardView.h; sourceTree = "<group>"; };
 		FC49E6DC14EB05660067166D /* BoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardView.m; sourceTree = "<group>"; };
 		FC8B629414E997AE0084B74A /* Hex Board Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hex Board Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FC8B629814E997AE0084B74A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		FC8B629A14E997AE0084B74A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		FC8B629C14E997AE0084B74A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		FC8B62A014E997AE0084B74A /* Hex Board Game-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Hex Board Game-Info.plist"; sourceTree = "<group>"; };
 		FC8B62A214E997AE0084B74A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FC8B62A414E997AE0084B74A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -53,28 +65,73 @@
 		FC8B62C314E9A96B0084B74A /* Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hex.m; sourceTree = "<group>"; };
 		FC8B62C614E9B9900084B74A /* HexView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HexView.h; sourceTree = "<group>"; };
 		FC8B62C714E9B9900084B74A /* HexView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HexView.m; sourceTree = "<group>"; };
-		FCE8627C14ED9A9500AEA210 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		FCE8627C14ED9A9500AEA211 /* GameStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameStatus.m; sourceTree = "<group>"; };
 		FCE8627C14ED9A9500AEA213 /* GameStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameStatus.h; sourceTree = "<group>"; };
+		FCE8627C14ED9A9500AEA214 /* Array2D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Array2D.m; sourceTree = "<group>"; };
+		FCE8627C14ED9A9500AEA216 /* Array2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Array2D.h; sourceTree = "<group>"; };
+		FCE8627C14ED9A9500AEA21A /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		FCE8627C14ED9A9500AEA21B /* Human.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Human.m; sourceTree = "<group>"; };
+		FCE8627C14ED9A9500AEA21D /* Human.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Human.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		FC47033315016F790004FB52 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC47033915016F790004FB52 /* SenTestingKit.framework in Frameworks */,
+				FC47033A15016F790004FB52 /* UIKit.framework in Frameworks */,
+				FC47033B15016F790004FB52 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FC8B629114E997AE0084B74A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC8B629914E997AE0084B74A /* UIKit.framework in Frameworks */,
-				FC8B629B14E997AE0084B74A /* Foundation.framework in Frameworks */,
-				FC8B629D14E997AE0084B74A /* CoreGraphics.framework in Frameworks */,
+				FC47033015016ED00004FB52 /* UIKit.framework in Frameworks */,
+				FC47032E15016ECA0004FB52 /* CoreGraphics.framework in Frameworks */,
+				FC47032C15016E8E0004FB52 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FC47033115016EF40004FB52 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FC47032F15016ED00004FB52 /* UIKit.framework */,
+				FC47032D15016ECA0004FB52 /* CoreGraphics.framework */,
+				FC47032B15016E8E0004FB52 /* Foundation.framework */,
+				FC47033815016F790004FB52 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FC47033C15016F790004FB52 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				FC47033D15016F790004FB52 /* Supporting Files */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		FC47033D15016F790004FB52 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FC47033E15016F790004FB52 /* Tests-Info.plist */,
+				FC47033F15016F790004FB52 /* InfoPlist.strings */,
+				FC47034515016F790004FB52 /* Tests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		FC49E6D714EB005E0067166D /* utils */ = {
 			isa = PBXGroup;
 			children = (
+				FCE8627C14ED9A9500AEA216 /* Array2D.h */,
+				FCE8627C14ED9A9500AEA214 /* Array2D.m */,
 				FC3FE9D314F448A70092543C /* Stack.h */,
 				FC3FE9D414F448A70092543C /* Stack.m */,
 			);
@@ -84,8 +141,9 @@
 		FC8B628914E997AE0084B74A = {
 			isa = PBXGroup;
 			children = (
+				FC47033C15016F790004FB52 /* Tests */,
+				FC47033115016EF40004FB52 /* Frameworks */,
 				FC8B629E14E997AE0084B74A /* Hex Board Game */,
-				FC8B629714E997AE0084B74A /* Frameworks */,
 				FC8B629514E997AE0084B74A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -94,18 +152,9 @@
 			isa = PBXGroup;
 			children = (
 				FC8B629414E997AE0084B74A /* Hex Board Game.app */,
+				FC47033715016F790004FB52 /* Tests.octest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		FC8B629714E997AE0084B74A /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				FC8B629814E997AE0084B74A /* UIKit.framework */,
-				FC8B629A14E997AE0084B74A /* Foundation.framework */,
-				FC8B629C14E997AE0084B74A /* CoreGraphics.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		FC8B629E14E997AE0084B74A /* Hex Board Game */ = {
@@ -120,6 +169,7 @@
 				FC8B62AB14E997AE0084B74A /* ViewController.m */,
 				FC8B62AD14E997AE0084B74A /* ViewController.xib */,
 				FC8B629F14E997AE0084B74A /* Supporting Files */,
+				FCE8627C14ED9A9500AEA219 /* player */,
 			);
 			path = "Hex Board Game";
 			sourceTree = "<group>";
@@ -146,7 +196,6 @@
 				FC8B62C014E9A7A10084B74A /* Board.m */,
 				FC8B62C214E9A96B0084B74A /* Hex.h */,
 				FC8B62C314E9A96B0084B74A /* Hex.m */,
-				FCE8627C14ED9A9500AEA210 /* Player.h */,
 			);
 			name = domain;
 			sourceTree = "<group>";
@@ -164,9 +213,37 @@
 			name = view;
 			sourceTree = "<group>";
 		};
+		FCE8627C14ED9A9500AEA219 /* player */ = {
+			isa = PBXGroup;
+			children = (
+				FCE8627C14ED9A9500AEA21D /* Human.h */,
+				FCE8627C14ED9A9500AEA21B /* Human.m */,
+				FCE8627C14ED9A9500AEA21A /* Player.h */,
+			);
+			path = player;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		FC47033615016F790004FB52 /* Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FC47034615016F790004FB52 /* Build configuration list for PBXNativeTarget "Tests" */;
+			buildPhases = (
+				FC47033215016F790004FB52 /* Sources */,
+				FC47033315016F790004FB52 /* Frameworks */,
+				FC47033415016F790004FB52 /* Resources */,
+				FC47033515016F790004FB52 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Tests;
+			productName = Tests;
+			productReference = FC47033715016F790004FB52 /* Tests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
 		FC8B629314E997AE0084B74A /* Hex Board Game */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FC8B62B214E997AE0084B74A /* Build configuration list for PBXNativeTarget "Hex Board Game" */;
@@ -205,11 +282,20 @@
 			projectRoot = "";
 			targets = (
 				FC8B629314E997AE0084B74A /* Hex Board Game */,
+				FC47033615016F790004FB52 /* Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		FC47033415016F790004FB52 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC47034115016F790004FB52 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FC8B629214E997AE0084B74A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -221,7 +307,30 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		FC47033515016F790004FB52 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		FC47033215016F790004FB52 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FC8B629014E997AE0084B74A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -237,12 +346,23 @@
 				FC49E6DD14EB05660067166D /* BoardView.m in Sources */,
 				FC3FE9D514F448A70092543C /* Stack.m in Sources */,
 				FCE8627C14ED9A9500AEA212 /* GameStatus.m in Sources */,
+				FCE8627C14ED9A9500AEA215 /* Array2D.m in Sources */,
+				FCE8627C14ED9A9500AEA218 /* Array2DTest.m in Sources */,
+				FCE8627C14ED9A9500AEA21C /* Human.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		FC47033F15016F790004FB52 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FC47034015016F790004FB52 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		FC8B62A114E997AE0084B74A /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -262,6 +382,36 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		FC47034715016F790004FB52 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Tests/Tests-Prefix.pch";
+				INFOPLIST_FILE = "Tests/Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		FC47034815016F790004FB52 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Tests/Tests-Prefix.pch";
+				INFOPLIST_FILE = "Tests/Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
 		FC8B62B014E997AE0084B74A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -332,6 +482,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		FC47034615016F790004FB52 /* Build configuration list for PBXNativeTarget "Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC47034715016F790004FB52 /* Debug */,
+				FC47034815016F790004FB52 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		FC8B628E14E997AE0084B74A /* Build configuration list for PBXProject "Hex Board Game" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

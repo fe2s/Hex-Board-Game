@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "Board.h"
-#import "Player.h"
 #import "GameStatus.h"
 
 
