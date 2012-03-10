@@ -15,11 +15,15 @@
 
 @property(nonatomic, readonly, strong) Board *board;
 
-//- (void)onTurnMade;
+
+- (id)initWithView:(UIView *)view;
+
+- (void)onTurnMade;
 
 - (GameStatus *)status;
 
 - (bool) humanTurn: (CGPoint) touchLocation;
+
 
 
 @end

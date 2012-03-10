@@ -35,7 +35,7 @@
     if (self) {
         NSLog(@"init with coder");
 
-        _game = [[Game alloc] init];
+        _game = [[Game alloc] initWithView:self];
 
         NSLog(@"init with coder END");
 

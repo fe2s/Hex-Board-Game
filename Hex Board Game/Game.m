@@ -13,19 +13,23 @@
 
 @implementation Game {
 
+    UIView *_view;
+
     GameStatus *_status;
 
     id <Player> _firstPlayer;
     id <Player> _secondPlayer;
+
 
 }
 
 @synthesize board = _board;
 
 
-- (id)init {
+- (id)initWithView:(UIView *)view {
     self = [super init];
     if (self) {
+        _view = view;
 
         _firstPlayer = [[Human alloc] initWithId:1 horizontal:true name:@"vasya"];
 //        _secondPlayer = [[Human alloc] initWithId:2 horizontal:false name:@"petya"];
@@ -42,6 +46,19 @@
 }
 
 
+// AI background thread
+- (void)aiTurn:(id)param {
+    [NSThread sleepForTimeInterval:3];
+
+    id <Player> nextPlayer = [_status nextTurnPlayer];
+    Hex *turnPosition = [nextPlayer makeTurn:_board];
+    turnPosition.player = nextPlayer;
+
+    [self onTurnMade];
+    [_view setNeedsDisplay];
+
+}
+
 - (void)onTurnMade {
 
     [_status toggleTurn];
@@ -55,13 +72,11 @@
     }
 
     id <Player> nextPlayer = [_status nextTurnPlayer];
-    if (nextPlayer.isHuman){
+    if (nextPlayer.isHuman) {
         return;
     } else {
-        Hex *turnPosition = [nextPlayer makeTurn:_board];
-        turnPosition.player = nextPlayer;
-
-        [self onTurnMade];
+        // AI turn in background thread
+        [NSThread detachNewThreadSelector:@selector(aiTurn:) toTarget:self withObject:nil];
     }
 
 
