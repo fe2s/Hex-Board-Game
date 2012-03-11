@@ -12,5 +12,6 @@
 @interface MainView : UIView
 
 @property(weak, nonatomic) IBOutlet UILabel *nextTurnLabel;
+@property (weak, nonatomic) IBOutlet UILabel *tickerLabel;
 
 @end

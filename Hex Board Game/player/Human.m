@@ -46,5 +46,9 @@
     @throw [NSException exceptionWithName:@"I'm too stupid" reason:nil userInfo:nil];
 }
 
+- (bool)isTurnTimeLimited {
+    return false;
+}
+
 
 @end

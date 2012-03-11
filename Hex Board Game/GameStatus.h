@@ -12,6 +12,8 @@
 
 }
 
+@property int timeForTurnLeft;
+
 - (id)initNew:(id <Player>)firstPlayer:(id <Player>)secondPlayer;
 
 - (id <Player>)prevTurnPlayer;
@@ -26,5 +28,6 @@
 
 - (id <Player>)winner;
 
+- (bool) isTurnTimeLimited;
 
 @end

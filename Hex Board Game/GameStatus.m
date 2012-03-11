@@ -17,9 +17,9 @@
     bool _isEnded;
     id <Player> _winner;
 
-    NSString *test;
-
 }
+
+@synthesize timeForTurnLeft = _timeForTurnLeft;
 
 - (id)initNew:(id <Player>)firstPlayer:(id <Player>)secondPlayer {
     self = [super init];
@@ -61,5 +61,10 @@
 - (id <Player>)winner {
     return _isEnded ? _winner : nil;
 }
+
+- (bool)isTurnTimeLimited {
+    return _nextTurnPlayer.isTurnTimeLimited;
+}
+
 
 @end

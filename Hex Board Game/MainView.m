@@ -19,7 +19,8 @@
 
 }
 
-@synthesize nextTurnLabel;
+@synthesize nextTurnLabel = _nextTurnLabel;
+@synthesize tickerLabel  = _tickerLabel;
 
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
@@ -48,7 +49,7 @@
     NSString *labelText;
     GameStatus *gameStatus = _game.status;
 
-    if ([gameStatus isEnded]) {
+    if (gameStatus.isEnded) {
         labelText = @"Winner: ";
         labelText = [labelText stringByAppendingString:gameStatus.winner.name];
     } else {
@@ -56,12 +57,24 @@
         labelText = [labelText stringByAppendingString:gameStatus.nextTurnPlayer.name];
     }
 
-    nextTurnLabel.text = labelText;
+    _nextTurnLabel.text = labelText;
 
+}
+
+- (void)_drawTickerLabel {
+    NSString *labelText = @"";
+    GameStatus *gameStatus = _game.status;
+    
+    if (gameStatus.isTurnTimeLimited){
+        labelText = [labelText stringByAppendingFormat:@"%d", _game.status.timeForTurnLeft];
+    }
+
+    _tickerLabel.text = labelText;
 }
 
 
 - (void)drawRect:(CGRect)rect {
+    NSLog(@"drawRect");
 
     Board *board = _game.board;
     BoardView *boardView = [[BoardView alloc] initWithBoard:board];
@@ -72,6 +85,9 @@
 
     // next turn label
     [self _drawNextTurnLabel];
+
+    // ticker
+    [self _drawTickerLabel];
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {

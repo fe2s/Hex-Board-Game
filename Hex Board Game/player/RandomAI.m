@@ -51,5 +51,9 @@
     return [emptyHexes objectAtIndex:random];
 }
 
+- (bool)isTurnTimeLimited {
+    return true;
+}
+
 
 @end

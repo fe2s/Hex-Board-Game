@@ -45,17 +45,27 @@
     return self;
 }
 
+- (void)tickerThread:(id)param {
+    while (_status.timeForTurnLeft > 0){
+        NSLog(@"ticker");
+        [_view performSelectorOnMainThread:@selector(setNeedsDisplay) withObject:nil waitUntilDone:false];
+        [NSThread sleepForTimeInterval:1];
+        _status.timeForTurnLeft = _status.timeForTurnLeft - 1;
+    }
+}
 
-// AI background thread
-- (void)aiTurn:(id)param {
-    [NSThread sleepForTimeInterval:3];
+
+- (void)aiTurnThread:(id)param {
+    const int turnTimeSec = 5;
+
+    [NSThread sleepForTimeInterval:turnTimeSec];
 
     id <Player> nextPlayer = [_status nextTurnPlayer];
     Hex *turnPosition = [nextPlayer makeTurn:_board];
     turnPosition.player = nextPlayer;
 
     [self onTurnMade];
-    [_view setNeedsDisplay];
+    [_view performSelectorOnMainThread:@selector(setNeedsDisplay) withObject:nil waitUntilDone:false];
 
 }
 
@@ -75,8 +85,12 @@
     if (nextPlayer.isHuman) {
         return;
     } else {
-        // AI turn in background thread
-        [NSThread detachNewThreadSelector:@selector(aiTurn:) toTarget:self withObject:nil];
+//        AI turn in background thread
+        [NSThread detachNewThreadSelector:@selector(aiTurnThread:) toTarget:self withObject:nil];
+        _status.timeForTurnLeft = 5;
+        // ticker background thread
+        [NSThread detachNewThreadSelector:@selector(tickerThread:) toTarget:self withObject:nil];
+
     }
 
 

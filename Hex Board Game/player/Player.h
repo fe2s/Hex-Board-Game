@@ -17,4 +17,6 @@
 
 - (Hex *)makeTurn:(Board *)board;
 
+- (bool) isTurnTimeLimited;
+
 @end
