@@ -23,4 +23,6 @@
 
 - (Boolean)contains:(CGPoint)point;
 
+- (NSString *) toString;
+
 @end

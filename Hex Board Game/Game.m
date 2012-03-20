@@ -61,7 +61,7 @@
     [NSThread sleepForTimeInterval:turnTimeSec];
 
     id <Player> nextPlayer = [_status nextTurnPlayer];
-    Hex *turnPosition = [nextPlayer makeTurn:_board];
+    Hex *turnPosition = [nextPlayer makeTurn:_board : turnTimeSec];
     turnPosition.player = nextPlayer;
 
     [self onTurnMade];

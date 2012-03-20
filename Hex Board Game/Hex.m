@@ -23,4 +23,9 @@
     
 }
 
+- (NSString *)toString {
+    return [NSString stringWithFormat:@"[%d %d]", i, j];
+}
+
+
 @end

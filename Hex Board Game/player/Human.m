@@ -42,7 +42,7 @@
     return true;
 }
 
-- (Hex *)makeTurn:(Board *)board {
+- (Hex *)makeTurn:(Board *)board :(int)turnTime {
     @throw [NSException exceptionWithName:@"I'm too stupid" reason:nil userInfo:nil];
 }
 

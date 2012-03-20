@@ -15,7 +15,7 @@
 
 - (bool)isHuman;
 
-- (Hex *)makeTurn:(Board *)board;
+- (Hex *)makeTurn:(Board *)board :(int)turnTime;
 
 - (bool) isTurnTimeLimited;
 

@@ -42,13 +42,16 @@
 
 }
 
-- (Hex *)makeTurn:(Board *)board {
+- (Hex *)makeTurn:(Board *)board :(int)turnTime {
 
     NSMutableArray *emptyHexes = board.emptyHexes;
 
     int random = arc4random() % [emptyHexes count];
 
-    return [emptyHexes objectAtIndex:random];
+    Hex *hex = [emptyHexes objectAtIndex:random];
+
+
+    return hex;
 }
 
 - (bool)isTurnTimeLimited {
