@@ -4,9 +4,9 @@
 
 #import <Foundation/Foundation.h>
 #import "Player.h"
+#import "AbstractPlayer.h"
 
 
-@interface Human : NSObject <Player>
-- (id)initWithId:(int)id horizontal:(bool)horizontal name:(NSString *)name;
+@interface Human : AbstractPlayer
 
 @end

@@ -15,7 +15,7 @@
 
     RandomAI *ai1 = [[RandomAI alloc] initWithId:1 horizontal:true name:@"ai 1"];
     RandomAI *ai2 = [[RandomAI alloc] initWithId:2 horizontal:false name:@"ai 2"];
-    Board *board = [[Board alloc] initWithSize:1];
+    Board *board = [[Board alloc] initWithSize:5];
 
     AIFight *fight = [[AIFight alloc] initWithPlayers:ai1 secondAI:ai2 board:board turnTime:3];
     id <Player> winner = [fight start];

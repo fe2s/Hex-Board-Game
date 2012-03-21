@@ -7,40 +7,7 @@
 #import "Hex.h"
 
 
-@implementation RandomAI {
-
-    int _id;
-    bool _horizontal;
-    NSString *_name;
-}
-
-- (id)initWithId:(int)id horizontal:(bool)horizontal name:(NSString *)name {
-    self = [super init];
-    if (self) {
-        _id = id;
-        _horizontal = horizontal;
-        _name = name;
-    }
-
-    return self;
-}
-
-- (int)id {
-    return _id;
-}
-
-- (NSString *)name {
-    return _name;
-}
-
-- (bool)horizontal {
-    return _horizontal;
-}
-
-- (bool)isHuman {
-    return false;
-
-}
+@implementation RandomAI
 
 - (Hex *)makeTurn:(Board *)board :(int)turnTime {
 
@@ -50,13 +17,11 @@
 
     Hex *hex = [emptyHexes objectAtIndex:random];
 
-
     return hex;
 }
 
 - (bool)isTurnTimeLimited {
     return true;
 }
-
 
 @end

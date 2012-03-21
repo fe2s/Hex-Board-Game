@@ -53,6 +53,12 @@
 		FCE8627C14ED9A9500AEA222 /* AIFight.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE8627C14ED9A9500AEA221 /* AIFight.m */; };
 		FCE8627C14ED9A9500AEA225 /* AITournament.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE8627C14ED9A9500AEA224 /* AITournament.m */; };
 		FCE8627C14ED9A9500AEA228 /* RandomAIFightTest.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE8627C14ED9A9500AEA227 /* RandomAIFightTest.m */; };
+		FCE8627C14ED9A9500AEA22B /* MonteCarloAI.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE8627C14ED9A9500AEA22A /* MonteCarloAI.m */; };
+		FCE8627C14ED9A9500AEA22C /* MonteCarloAI.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE8627C14ED9A9500AEA22A /* MonteCarloAI.m */; };
+		FCE8627C14ED9A9500AEA22F /* AbstractPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE8627C14ED9A9500AEA22E /* AbstractPlayer.m */; };
+		FCE8627C14ED9A9500AEA230 /* AbstractPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE8627C14ED9A9500AEA22E /* AbstractPlayer.m */; };
+		FCE8627C14ED9A9500AEA233 /* AIPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE8627C14ED9A9500AEA232 /* AIPlayer.m */; };
+		FCE8627C14ED9A9500AEA234 /* AIPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE8627C14ED9A9500AEA232 /* AIPlayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -106,6 +112,12 @@
 		FCE8627C14ED9A9500AEA226 /* AITournament.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AITournament.h; sourceTree = "<group>"; };
 		FCE8627C14ED9A9500AEA227 /* RandomAIFightTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RandomAIFightTest.m; path = Tests/RandomAIFightTest.m; sourceTree = SOURCE_ROOT; };
 		FCE8627C14ED9A9500AEA229 /* RandomAIFightTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RandomAIFightTest.h; path = Tests/RandomAIFightTest.h; sourceTree = SOURCE_ROOT; };
+		FCE8627C14ED9A9500AEA22A /* MonteCarloAI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonteCarloAI.m; sourceTree = "<group>"; };
+		FCE8627C14ED9A9500AEA22D /* MonteCarloAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonteCarloAI.h; sourceTree = "<group>"; };
+		FCE8627C14ED9A9500AEA22E /* AbstractPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractPlayer.m; sourceTree = "<group>"; };
+		FCE8627C14ED9A9500AEA231 /* AbstractPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractPlayer.h; sourceTree = "<group>"; };
+		FCE8627C14ED9A9500AEA232 /* AIPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIPlayer.m; sourceTree = "<group>"; };
+		FCE8627C14ED9A9500AEA235 /* AIPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIPlayer.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,6 +287,12 @@
 		FCE8627C14ED9A9500AEA219 /* player */ = {
 			isa = PBXGroup;
 			children = (
+				FCE8627C14ED9A9500AEA235 /* AIPlayer.h */,
+				FCE8627C14ED9A9500AEA232 /* AIPlayer.m */,
+				FCE8627C14ED9A9500AEA231 /* AbstractPlayer.h */,
+				FCE8627C14ED9A9500AEA22E /* AbstractPlayer.m */,
+				FCE8627C14ED9A9500AEA22D /* MonteCarloAI.h */,
+				FCE8627C14ED9A9500AEA22A /* MonteCarloAI.m */,
 				FCE8627C14ED9A9500AEA220 /* RandomAI.h */,
 				FCE8627C14ED9A9500AEA21E /* RandomAI.m */,
 				FCE8627C14ED9A9500AEA21D /* Human.h */,
@@ -406,6 +424,9 @@
 				FCE8627C14ED9A9500AEA21F /* RandomAI.m in Sources */,
 				FCE8627C14ED9A9500AEA222 /* AIFight.m in Sources */,
 				FCE8627C14ED9A9500AEA225 /* AITournament.m in Sources */,
+				FCE8627C14ED9A9500AEA22B /* MonteCarloAI.m in Sources */,
+				FCE8627C14ED9A9500AEA22F /* AbstractPlayer.m in Sources */,
+				FCE8627C14ED9A9500AEA233 /* AIPlayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,6 +454,9 @@
 				FCCF372A15190C160023D983 /* Hex.h in Sources */,
 				FCCF372B15190C160023D983 /* Hex.m in Sources */,
 				FCE8627C14ED9A9500AEA228 /* RandomAIFightTest.m in Sources */,
+				FCE8627C14ED9A9500AEA22C /* MonteCarloAI.m in Sources */,
+				FCE8627C14ED9A9500AEA230 /* AbstractPlayer.m in Sources */,
+				FCE8627C14ED9A9500AEA234 /* AIPlayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

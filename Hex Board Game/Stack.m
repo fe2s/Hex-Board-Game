@@ -9,7 +9,7 @@
 #import "Stack.h"
 
 @implementation Stack {
-@private NSMutableArray *_arr;
+    NSMutableArray *_arr;
 }
 
 - (id)init {

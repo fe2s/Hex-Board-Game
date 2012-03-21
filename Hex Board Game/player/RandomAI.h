@@ -4,10 +4,10 @@
 
 #import <Foundation/Foundation.h>
 #import "Player.h"
+#import "AbstractPlayer.h"
+#import "AIPlayer.h"
 
 
-@interface RandomAI : NSObject <Player>
-
-- (id)initWithId:(int)id horizontal:(bool)horizontal name:(NSString *)name;
+@interface RandomAI : AIPlayer
 
 @end

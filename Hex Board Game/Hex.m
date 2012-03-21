@@ -17,7 +17,8 @@
 @synthesize j;
 
 - (Boolean) contains: (CGPoint) point {
-   
+
+    // TODO: rough circle
     float radius = edgeSize / 1.5;
     return sqrt(pow(point.x - centerPoint.x, 2) + pow(point.y - centerPoint.y, 2)) <= radius;
     

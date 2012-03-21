@@ -20,7 +20,6 @@
     id <Player> _firstPlayer;
     id <Player> _secondPlayer;
 
-
 }
 
 @synthesize board = _board;
@@ -46,7 +45,7 @@
 }
 
 - (void)tickerThread:(id)param {
-    while (_status.timeForTurnLeft > 0){
+    while (_status.timeForTurnLeft > 0) {
         NSLog(@"ticker");
         [_view performSelectorOnMainThread:@selector(setNeedsDisplay) withObject:nil waitUntilDone:false];
         [NSThread sleepForTimeInterval:1];
@@ -61,7 +60,7 @@
     [NSThread sleepForTimeInterval:turnTimeSec];
 
     id <Player> nextPlayer = [_status nextTurnPlayer];
-    Hex *turnPosition = [nextPlayer makeTurn:_board : turnTimeSec];
+    Hex *turnPosition = [nextPlayer makeTurn:_board :turnTimeSec];
     turnPosition.player = nextPlayer;
 
     [self onTurnMade];
@@ -105,12 +104,9 @@
 
     NSMutableArray *hexes = _board.hexes;
 
-    int hexCount = [hexes count];
-
-    for (int i = 0; i < hexCount; i++) {
-        Hex *hex = (Hex *) [hexes objectAtIndex:i];
+    for (Hex *hex in hexes) {
         if ([hex contains:touchLocation] && hex.player == nil) {
-            NSLog(@"Hit hex #%d", i);
+            NSLog(@"Hit hex %@", hex.toString);
 
             hex.player = [_status nextTurnPlayer];
 
