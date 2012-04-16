@@ -6,13 +6,8 @@
 #import "Array2D.h"
 
 
-@implementation Array2D {
+@implementation Array2D
 
-    NSMutableArray *_arr;
-    int _i;
-    int _j;
-
-}
 - (id)initWithSize:(int)i :(int)j {
     self = [super init];
     if (self) {

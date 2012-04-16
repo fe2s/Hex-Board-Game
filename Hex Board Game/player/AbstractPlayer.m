@@ -5,11 +5,7 @@
 #import "AbstractPlayer.h"
 
 
-@implementation AbstractPlayer {
-    int _id;
-    bool _horizontal;
-    NSString *_name;
-}
+@implementation AbstractPlayer
 
 - (id)initWithId:(int)id horizontal:(bool)horizontal name:(NSString *)name {
     self = [super init];

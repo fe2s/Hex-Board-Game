@@ -10,6 +10,14 @@
 
 @interface GameStatus : NSObject {
 
+    // TODO: replace with PlayersPair
+    id <Player> _firstPlayer;
+    id <Player> _secondPlayer;
+
+    id <Player> _nextTurnPlayer;
+    bool _isEnded;
+    id <Player> _winner;
+
 }
 
 @property int timeForTurnLeft;
@@ -28,6 +36,6 @@
 
 - (id <Player>)winner;
 
-- (bool) isTurnTimeLimited;
+- (bool)isTurnTimeLimited;
 
 @end

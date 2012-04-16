@@ -9,7 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "Board.h"
 
-@interface BoardView : NSObject
+@interface BoardView : NSObject {
+    Board *_board;
+}
 
 - (BoardView *)initWithBoard:(Board *)board;
 

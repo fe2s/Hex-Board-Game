@@ -7,23 +7,17 @@
 #import "Player.h"
 #import "Board.h"
 #import "Hex.h"
+#import "PlayersPair.h"
 
 
-@implementation AIFight {
+@implementation AIFight
 
-    id <Player> _firstAI;
-    id <Player> _secondAI;
-    Board *_board;
-    GameStatus *_gameStatus;
-    int _turnTime;
-}
-- (id)initWithPlayers:(id <Player>)firstAI secondAI:(id <Player>)secondAI board:(Board *)board turnTime:(int)turnTime {
+- (id)initWithPlayers:(PlayersPair *)players board:(Board *)board turnTime:(int)turnTime {
     self = [super init];
     if (self) {
-        _firstAI = firstAI;
-        _secondAI = secondAI;
+        _players = players;
         _board = board;
-        _gameStatus = [[GameStatus alloc] initNew:_firstAI :_secondAI];
+        _gameStatus = [[GameStatus alloc] initNew:_players.first :_players.second];
         _turnTime = turnTime;
     }
 
@@ -36,12 +30,19 @@
         // make turn
         id <Player> player = _gameStatus.nextTurnPlayer;
         Hex *hex = [player makeTurn:_board :_turnTime];
-        hex.player = player;
-        NSLog(@"player [%@]: %@ ", player.name, hex.toString);
+
+        // validate turn
+        if (![[_board at:hex.i :hex.j] isEmpty]){
+            @throw [NSException exceptionWithName:nil reason:@"Not valid turn" userInfo:nil];
+        }
+
+        [_board applyTurn:hex :player];
+
+        NSLog(@"player [%@]: %@ ", player.name, hex);
         [_gameStatus toggleTurn];
 
         // check for winner
-        if ([_board checkForWinner:player]) {
+        if ([_board findWinnerPath:player]) {
             [_gameStatus victory:player];
         }
 

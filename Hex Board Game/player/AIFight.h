@@ -6,11 +6,19 @@
 
 @protocol Player;
 @class Board;
+@class PlayersPair;
+@class GameStatus;
 
 
-@interface AIFight : NSObject
+@interface AIFight : NSObject   {
 
-- (id)initWithPlayers:(id <Player>)firstAI secondAI:(id <Player>)secondAI board:(Board *)board turnTime:(int)turnTime;
+    PlayersPair *_players;
+    Board *_board;
+    GameStatus *_gameStatus;
+    int _turnTime;
+}
+
+- (id)initWithPlayers:(PlayersPair *)players board:(Board *)board turnTime:(int)turnTime;
 
 - (id <Player>)start;
 

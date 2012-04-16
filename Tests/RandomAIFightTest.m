@@ -6,6 +6,7 @@
 #import "RandomAI.h"
 #import "Board.h"
 #import "AIFight.h"
+#import "PlayersPair.h"
 
 
 @implementation RandomAIFightTest
@@ -15,9 +16,12 @@
 
     RandomAI *ai1 = [[RandomAI alloc] initWithId:1 horizontal:true name:@"ai 1"];
     RandomAI *ai2 = [[RandomAI alloc] initWithId:2 horizontal:false name:@"ai 2"];
+
+    PlayersPair *players = [[PlayersPair alloc] initWithFirstPlayer:ai1 secondPlayer:ai2];
+
     Board *board = [[Board alloc] initWithSize:5];
 
-    AIFight *fight = [[AIFight alloc] initWithPlayers:ai1 secondAI:ai2 board:board turnTime:3];
+    AIFight *fight = [[AIFight alloc] initWithPlayers:players board:board turnTime:3];
     id <Player> winner = [fight start];
     NSLog(@"winner: %@", winner.name);
 

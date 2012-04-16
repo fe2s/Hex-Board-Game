@@ -9,9 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "Game.h"
 
-@interface MainView : UIView
+@interface MainView : UIView {
+
+    Game *_game;
+
+}
 
 @property(weak, nonatomic) IBOutlet UILabel *nextTurnLabel;
-@property (weak, nonatomic) IBOutlet UILabel *tickerLabel;
+@property(weak, nonatomic) IBOutlet UILabel *tickerLabel;
 
 @end

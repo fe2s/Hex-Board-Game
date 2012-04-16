@@ -8,7 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Stack : NSObject
+@interface Stack : NSObject {
+    NSMutableArray *_arr;
+}
 
 - (void)push:(id)object;
 

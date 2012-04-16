@@ -11,19 +11,9 @@
 #import "Hex.h"
 #import "RandomAI.h"
 
-@implementation Game {
-
-    UIView *_view;
-
-    GameStatus *_status;
-
-    id <Player> _firstPlayer;
-    id <Player> _secondPlayer;
-
-}
+@implementation Game
 
 @synthesize board = _board;
-
 
 - (id)initWithView:(UIView *)view {
     self = [super init];
@@ -75,7 +65,7 @@
     // check for winner
     id <Player> player = [_status prevTurnPlayer];
 
-    if ([_board checkForWinner:player]) {
+    if ([_board findWinnerPath:player]) {
         [_status victory:player];
         return;
     }
@@ -106,7 +96,7 @@
 
     for (Hex *hex in hexes) {
         if ([hex contains:touchLocation] && hex.player == nil) {
-            NSLog(@"Hit hex %@", hex.toString);
+            NSLog(@"Hit hex %@", hex);
 
             hex.player = [_status nextTurnPlayer];
 

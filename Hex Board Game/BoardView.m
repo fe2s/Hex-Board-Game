@@ -10,9 +10,7 @@
 #import "Hex.h"
 #import "HexView.h"
 
-@implementation BoardView {
-@private Board *_board;
-}
+@implementation BoardView
 
 - (BoardView *)initWithBoard:(Board *)board {
 

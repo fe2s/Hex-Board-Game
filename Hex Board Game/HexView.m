@@ -9,11 +9,7 @@
 #import "HexView.h"
 
 
-@implementation HexView {
-
-    Hex *_hex;
-
-}
+@implementation HexView
 
 
 - (HexView *)initWithHex :(Hex *)hex {

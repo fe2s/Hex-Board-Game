@@ -9,7 +9,11 @@
 #import <Foundation/Foundation.h>
 #import "Hex.h"
 
-@interface HexView : NSObject
+@interface HexView : NSObject  {
+
+    Hex *_hex;
+
+}
 
 
 - (HexView *)initWithHex :(Hex *)hex;

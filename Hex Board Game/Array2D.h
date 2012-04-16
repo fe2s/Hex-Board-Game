@@ -7,7 +7,13 @@
 #import <Foundation/Foundation.h>
 
 
-@interface Array2D : NSObject
+@interface Array2D : NSObject {
+
+    NSMutableArray *_arr;
+    int _i;
+    int _j;
+
+}
 
 - (id)initWithSize:(int)i :(int)j;
 

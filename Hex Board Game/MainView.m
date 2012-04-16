@@ -13,11 +13,7 @@
 #import "Hex.h"
 
 
-@implementation MainView {
-
-    Game *_game;
-
-}
+@implementation MainView
 
 @synthesize nextTurnLabel = _nextTurnLabel;
 @synthesize tickerLabel  = _tickerLabel;

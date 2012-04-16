@@ -11,7 +11,16 @@
 #import "GameStatus.h"
 
 
-@interface Game : NSObject
+@interface Game : NSObject {
+
+    UIView *_view;
+
+    GameStatus *_status;
+
+    id <Player> _firstPlayer;
+    id <Player> _secondPlayer;
+
+}
 
 @property(nonatomic, readonly, strong) Board *board;
 
@@ -22,8 +31,7 @@
 
 - (GameStatus *)status;
 
-- (bool) humanTurn: (CGPoint) touchLocation;
-
+- (bool)humanTurn:(CGPoint)touchLocation;
 
 
 @end

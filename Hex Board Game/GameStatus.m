@@ -8,16 +8,7 @@
 #import "GameStatus.h"
 
 
-@implementation GameStatus {
-
-    id <Player> _firstPlayer;
-    id <Player> _secondPlayer;
-
-    id <Player> _nextTurnPlayer;
-    bool _isEnded;
-    id <Player> _winner;
-
-}
+@implementation GameStatus
 
 @synthesize timeForTurnLeft = _timeForTurnLeft;
 

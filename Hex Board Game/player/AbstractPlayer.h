@@ -6,7 +6,11 @@
 #import "Player.h"
 
 
-@interface AbstractPlayer : NSObject <Player>
+@interface AbstractPlayer : NSObject <Player> {
+    int _id;
+    bool _horizontal;
+    NSString *_name;
+}
 
 - (id)initWithId:(int)id horizontal:(bool)horizontal name:(NSString *)name;
 

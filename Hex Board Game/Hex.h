@@ -10,19 +10,24 @@
 #import "Player.h"
 
 
-@interface Hex : NSObject
+@interface Hex : NSObject <NSCopying> {
+    int _edgeSize;
+    CGPoint _centerPoint;
+    id<Player> _player;
+    int _i;
+    int _j;
+}
 
 @property(nonatomic) int edgeSize;
 @property(nonatomic) CGPoint centerPoint;
 
-@property(nonatomic, strong) id<Player> player;
+@property(nonatomic, strong) id <Player> player;
 
 @property(nonatomic) int i;
 @property(nonatomic) int j;
 
 
+- (Boolean)isEmpty;
 - (Boolean)contains:(CGPoint)point;
-
-- (NSString *) toString;
 
 @end

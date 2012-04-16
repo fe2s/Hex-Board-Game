@@ -8,9 +8,7 @@
 
 #import "Stack.h"
 
-@implementation Stack {
-    NSMutableArray *_arr;
-}
+@implementation Stack
 
 - (id)init {
 

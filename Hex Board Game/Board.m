@@ -16,11 +16,11 @@
 @synthesize hexes = _hexes;
 
 
-- (id)initWithSize:(int)theSize {
+- (id)initWithSize:(int)size {
 
     self = [super init];
     if (self) {
-        _size = theSize;
+        _size = size;
 
         // init hexes
         _hexes = [[NSMutableArray alloc] initWithCapacity:_size];
@@ -34,7 +34,6 @@
             hex.edgeSize = 20;
             hex.j = i / _size;
             hex.i = i % _size;
-//            hex.player = None;
 
             // can optimize
             float deltaX = -(i / _size) * hex.edgeSize * cosf(M_PI/ 6) +
@@ -58,8 +57,28 @@
     return self;
 }
 
+// used for deep copy
+- (id)initWithHexes:(NSMutableArray *)hexes:(int)size {
+
+    self = [super init];
+    if (self) {
+        _size = size;
+
+        // init hexes
+        _hexes = hexes;
+    }
+
+    return self;
+}
+
 - (Hex *)at:(int)i :(int)j {
     return [_hexes objectAtIndex:j * _size + i];
+}
+
+- (Hex *)applyTurn:(Hex *)h :(id <Player>)player {
+    Hex *hex = [self at:h.i :h.j];
+    hex.player = player;
+    return hex;
 }
 
 
@@ -91,6 +110,7 @@
     return res;
 }
 
+
 - (Boolean)isRightBorder:(Hex *)hex {
     return hex.i == _size - 1;
 }
@@ -100,7 +120,7 @@
 }
 
 
-- (Boolean)checkForWinner:(id<Player>)player {
+- (Boolean)findWinnerPath:(id <Player>)player {
 
     // visited flags
     bool visitedHexes[_size][_size];
@@ -150,13 +170,21 @@
 }
 
 - (NSMutableArray *)emptyHexes {
-    NSMutableArray * empty = [[NSMutableArray alloc] init] ;
-    for(Hex *h in _hexes){
-        if (h.player == nil){
+    NSMutableArray *empty = [[NSMutableArray alloc] init];
+    for (Hex *h in _hexes) {
+        if (h.player == nil) {
             [empty addObject:h];
         }
     }
     return empty;
+}
+
+- (id)copyWithZone:(NSZone *)zone {
+    NSMutableArray *copyOfHexes = [[NSMutableArray alloc] initWithArray:_hexes copyItems:true];
+
+    Board *another = [[Board alloc] initWithHexes:copyOfHexes :_size];
+
+    return another;
 }
 
 
