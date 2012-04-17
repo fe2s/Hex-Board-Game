@@ -37,13 +37,13 @@
 
 }
 
-- (Hex *)makeTurn:(Board *)board :(int)turnTime {
+- (Hex *)makeMove:(Board *)board :(int)moveTimeLimit {
     @throw [NSException exceptionWithName:NSInternalInconsistencyException
                                    reason:@"makeTurn is not implemented"
                                  userInfo:nil];
 }
 
-- (bool)isTurnTimeLimited {
+- (bool)isMoveTimeLimited {
     @throw [NSException exceptionWithName:NSInternalInconsistencyException
                                    reason:@"isTurnTimeLimited is not implemented"
                                  userInfo:nil];

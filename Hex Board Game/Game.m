@@ -10,6 +10,7 @@
 #import "Human.h"
 #import "Hex.h"
 #import "RandomAI.h"
+#import "MonteCarloAI.h"
 
 @implementation Game
 
@@ -22,7 +23,7 @@
 
         _firstPlayer = [[Human alloc] initWithId:1 horizontal:true name:@"vasya"];
 //        _secondPlayer = [[Human alloc] initWithId:2 horizontal:false name:@"petya"];
-        _secondPlayer = [[RandomAI alloc] initWithId:2 horizontal:false name:@"Random AI"];
+        _secondPlayer = [[MonteCarloAI alloc] initWithId:2 horizontal:false name:@"Random AI"];
 
         const int defaultSize = 6;
 
@@ -35,48 +36,48 @@
 }
 
 - (void)tickerThread:(id)param {
-    while (_status.timeForTurnLeft > 0) {
+    while (_status.timeForMoveLeft > 0) {
         NSLog(@"ticker");
         [_view performSelectorOnMainThread:@selector(setNeedsDisplay) withObject:nil waitUntilDone:false];
         [NSThread sleepForTimeInterval:1];
-        _status.timeForTurnLeft = _status.timeForTurnLeft - 1;
+        _status.timeForMoveLeft = _status.timeForMoveLeft - 1;
     }
 }
 
 
-- (void)aiTurnThread:(id)param {
-    const int turnTimeSec = 5;
+- (void)aiMoveThread:(id)param {
+    const int moveTimeLimitSec = 5;
 
-    [NSThread sleepForTimeInterval:turnTimeSec];
+    [NSThread sleepForTimeInterval:moveTimeLimitSec];
 
-    id <Player> nextPlayer = [_status nextTurnPlayer];
-    Hex *turnPosition = [nextPlayer makeTurn:_board :turnTimeSec];
-    turnPosition.player = nextPlayer;
+    id <Player> nextPlayer = [_status nextMovePlayer];
+    Hex *movePosition = [nextPlayer makeMove:_board :moveTimeLimitSec];
+    [_board applyMove:movePosition :nextPlayer];
 
-    [self onTurnMade];
+    [self onMoveMade];
     [_view performSelectorOnMainThread:@selector(setNeedsDisplay) withObject:nil waitUntilDone:false];
 
 }
 
-- (void)onTurnMade {
+- (void)onMoveMade {
 
-    [_status toggleTurn];
+    [_status toggleMove];
 
     // check for winner
-    id <Player> player = [_status prevTurnPlayer];
+    id <Player> player = [_status prevMovePlayer];
 
     if ([_board findWinnerPath:player]) {
         [_status victory:player];
         return;
     }
 
-    id <Player> nextPlayer = [_status nextTurnPlayer];
+    id <Player> nextPlayer = [_status nextMovePlayer];
     if (nextPlayer.isHuman) {
         return;
     } else {
-//        AI turn in background thread
-        [NSThread detachNewThreadSelector:@selector(aiTurnThread:) toTarget:self withObject:nil];
-        _status.timeForTurnLeft = 5;
+//        AI move in background thread
+        [NSThread detachNewThreadSelector:@selector(aiMoveThread:) toTarget:self withObject:nil];
+        _status.timeForMoveLeft = 5;
         // ticker background thread
         [NSThread detachNewThreadSelector:@selector(tickerThread:) toTarget:self withObject:nil];
 
@@ -86,9 +87,9 @@
 }
 
 // return if turn made
-- (bool)humanTurn:(CGPoint)touchLocation {
-    if (![[_status nextTurnPlayer] isHuman]) {
-        NSLog(@"Human turn is not allowed !");
+- (bool)humanMove:(CGPoint)touchLocation {
+    if (![[_status nextMovePlayer] isHuman]) {
+        NSLog(@"Human move is not allowed !");
         return false;
     }
 
@@ -98,9 +99,9 @@
         if ([hex contains:touchLocation] && hex.player == nil) {
             NSLog(@"Hit hex %@", hex);
 
-            hex.player = [_status nextTurnPlayer];
+            hex.player = [_status nextMovePlayer];
 
-            [self onTurnMade];
+            [self onMoveMade];
 
             return true;
         }

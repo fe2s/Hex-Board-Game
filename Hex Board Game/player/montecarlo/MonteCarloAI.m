@@ -30,13 +30,17 @@
 }
 
 
-- (void)simulate:(MonteCarloNode *)root:(PlayersPair *)players {
+- (void)simulate:(MonteCarloNode *)root:(PlayersPair *)players:(int)turnTimeLimit {
+
+    NSDate *startDate = [NSDate date];
 
     MonteCarloNode *currNode = root;
     int iteratesCount = 0;
 
-    // TODO: replace with time constraints
-    while (iteratesCount++ != 10000) {
+    // check time every 1000 iteration.
+    // note, timeIntervalSinceNow returns negative num
+    while ((iteratesCount++ % 1000 != 0) ||
+            [startDate timeIntervalSinceNow] > -turnTimeLimit) {
 
         Board *board = currNode.board;
 
@@ -66,7 +70,7 @@
         } else {
             player = [players anotherOne:currNode.turn.player];
         }
-        Hex *turn = [newChildBoard applyTurn:selection :player];
+        Hex *turn = [newChildBoard applyMove:selection :player];
 
         // add to children and remove from undiscovered set
         MonteCarloNode *newChildNode = [[MonteCarloNode alloc] initWithBoard:newChildBoard :turn :currNode];
@@ -113,7 +117,7 @@
 
     for (MonteCarloNode *child in root.children) {
         WinRatio *ratio = [self calcWinRatio:child];
-        NSLog(@"win ratio %@", ratio);
+        NSLog(@"win ratio %@, games %d", ratio, ratio.games);
         if ([ratio compareTo:bestRatio]) {
             bestRatio = ratio;
             bestTurn = child.turn;
@@ -128,7 +132,9 @@
 }
 
 
-- (Hex *)makeTurn:(Board *)board :(int)turnTime {
+- (Hex *)makeMove:(Board *)board :(int)moveTimeLimit {
+
+    NSDate *startDate = [NSDate date];
 
     PlayersPair *players = [self getPlayers:board];
     id <Player> opponent = [players anotherOne:self];
@@ -136,10 +142,13 @@
     MonteCarloNode *root = [[MonteCarloNode alloc] initWithBoard:board :nil :nil];
 
     // simulate
-    [self simulate:root :players];
+    [self simulate:root :players :moveTimeLimit];
 
 
-    return [self selectBestTurn:root];
+    Hex *bestTurn = [self selectBestTurn:root];
+
+    NSLog(@"turn took %f", [startDate timeIntervalSinceNow]);
+    return bestTurn;
 }
 
 

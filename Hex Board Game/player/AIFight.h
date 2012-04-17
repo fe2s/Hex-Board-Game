@@ -15,10 +15,10 @@
     PlayersPair *_players;
     Board *_board;
     GameStatus *_gameStatus;
-    int _turnTime;
+    int _turnLimit;
 }
 
-- (id)initWithPlayers:(PlayersPair *)players board:(Board *)board turnTime:(int)turnTime;
+- (id)initWithPlayers:(PlayersPair *)players board:(Board *)board moveTimeLimit:(int)moveTimeLimit;
 
 - (id <Player>)start;
 

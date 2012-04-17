@@ -14,28 +14,28 @@
     id <Player> _firstPlayer;
     id <Player> _secondPlayer;
 
-    id <Player> _nextTurnPlayer;
+    id <Player> _nextMovePlayer;
     bool _isEnded;
     id <Player> _winner;
 
 }
 
-@property int timeForTurnLeft;
+@property int timeForMoveLeft;
 
 - (id)initNew:(id <Player>)firstPlayer:(id <Player>)secondPlayer;
 
-- (id <Player>)prevTurnPlayer;
+- (id <Player>)prevMovePlayer;
 
-- (id <Player>)nextTurnPlayer;
+- (id <Player>)nextMovePlayer;
 
 - (void)victory:(id <Player>)aWinner;
 
-- (void)toggleTurn;
+- (void)toggleMove;
 
 - (bool)isEnded;
 
 - (id <Player>)winner;
 
-- (bool)isTurnTimeLimited;
+- (bool)isMoveTimeLimited;
 
 @end

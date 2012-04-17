@@ -10,11 +10,11 @@
 
 @implementation RandomAI
 
-- (Hex *)makeTurn:(Board *)board :(int)turnTime {
+- (Hex *)makeMove:(Board *)board :(int)moveTimeLimit {
       return [RandomUtils pickAnyFromArray:board.emptyHexes];
 }
 
-- (bool)isTurnTimeLimited {
+- (bool)isMoveTimeLimited {
     return true;
 }
 

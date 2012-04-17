@@ -13,11 +13,11 @@
     return true;
 }
 
-- (Hex *)makeTurn:(Board *)board :(int)turnTime {
+- (Hex *)makeMove:(Board *)board :(int)moveTimeLimit {
     @throw [NSException exceptionWithName:@"I'm too stupid" reason:nil userInfo:nil];
 }
 
-- (bool)isTurnTimeLimited {
+- (bool)isMoveTimeLimited {
     return false;
 }
 

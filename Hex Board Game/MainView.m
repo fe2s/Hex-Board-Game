@@ -16,7 +16,7 @@
 @implementation MainView
 
 @synthesize nextTurnLabel = _nextTurnLabel;
-@synthesize tickerLabel  = _tickerLabel;
+@synthesize tickerLabel = _tickerLabel;
 
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
@@ -50,7 +50,7 @@
         labelText = [labelText stringByAppendingString:gameStatus.winner.name];
     } else {
         labelText = @"Next turn: ";
-        labelText = [labelText stringByAppendingString:gameStatus.nextTurnPlayer.name];
+        labelText = [labelText stringByAppendingString:gameStatus.nextMovePlayer.name];
     }
 
     _nextTurnLabel.text = labelText;
@@ -60,9 +60,9 @@
 - (void)_drawTickerLabel {
     NSString *labelText = @"";
     GameStatus *gameStatus = _game.status;
-    
-    if (gameStatus.isTurnTimeLimited){
-        labelText = [labelText stringByAppendingFormat:@"%d", _game.status.timeForTurnLeft];
+
+    if (gameStatus.isMoveTimeLimited) {
+        labelText = [labelText stringByAppendingFormat:@"%d", _game.status.timeForMoveLeft];
     }
 
     _tickerLabel.text = labelText;
@@ -93,8 +93,8 @@
     CGPoint touchLocation = [touch locationInView:self];
     NSLog(@"%f, %f", touchLocation.x, touchLocation.y);
 
-    bool turnMade = [_game humanTurn:touchLocation];
-    if (turnMade){
+    bool moveMade = [_game humanMove:touchLocation];
+    if (moveMade) {
         [self setNeedsDisplay];
     }
 

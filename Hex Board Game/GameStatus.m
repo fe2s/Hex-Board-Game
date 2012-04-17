@@ -10,7 +10,7 @@
 
 @implementation GameStatus
 
-@synthesize timeForTurnLeft = _timeForTurnLeft;
+@synthesize timeForMoveLeft = _timeForMoveLeft;
 
 - (id)initNew:(id <Player>)firstPlayer:(id <Player>)secondPlayer {
     self = [super init];
@@ -18,7 +18,7 @@
         _isEnded = false;
         _firstPlayer = firstPlayer;
         _secondPlayer = secondPlayer;
-        _nextTurnPlayer = firstPlayer;
+        _nextMovePlayer = firstPlayer;
     }
     return self;
 }
@@ -27,13 +27,13 @@
     return p == _firstPlayer ? _secondPlayer : _firstPlayer;
 }
 
-- (id <Player>)prevTurnPlayer {
+- (id <Player>)prevMovePlayer {
     // not abs correct
-    return [self _inversePlayer:_nextTurnPlayer];
+    return [self _inversePlayer:_nextMovePlayer];
 }
 
-- (id <Player>)nextTurnPlayer {
-    return _nextTurnPlayer;
+- (id <Player>)nextMovePlayer {
+    return _nextMovePlayer;
 }
 
 - (void)victory:(id <Player>)winner {
@@ -41,8 +41,8 @@
     _isEnded = true;
 }
 
-- (void)toggleTurn {
-    _nextTurnPlayer = [self _inversePlayer:_nextTurnPlayer];
+- (void)toggleMove {
+    _nextMovePlayer = [self _inversePlayer:_nextMovePlayer];
 }
 
 - (bool)isEnded {
@@ -53,8 +53,8 @@
     return _isEnded ? _winner : nil;
 }
 
-- (bool)isTurnTimeLimited {
-    return _nextTurnPlayer.isTurnTimeLimited;
+- (bool)isMoveTimeLimited {
+    return _nextMovePlayer.isMoveTimeLimited;
 }
 
 

@@ -29,7 +29,7 @@
 
     Board *board = [[Board alloc] initWithSize:3];
 
-    AIFight *fight = [[AIFight alloc] initWithPlayers:players board:board turnTime:3];
+    AIFight *fight = [[AIFight alloc] initWithPlayers:players board:board moveTimeLimit:3];
     id <Player> winner = [fight start];
     NSLog(@"winner: %@", winner.name);
 

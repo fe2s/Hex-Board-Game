@@ -26,6 +26,6 @@
 
 - (Hex *)at:(int)i :(int)j;
 
-- (Hex *)applyTurn:(Hex *)h:(id <Player>)player;
+- (Hex *)applyMove:(Hex *)h:(id <Player>)player;
 
 @end

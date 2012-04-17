@@ -11,7 +11,7 @@
     return false;
 }
 
-- (bool)isTurnTimeLimited {
+- (bool)isMoveTimeLimited {
     return true;
 }
 

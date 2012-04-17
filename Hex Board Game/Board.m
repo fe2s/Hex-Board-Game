@@ -75,7 +75,7 @@
     return [_hexes objectAtIndex:j * _size + i];
 }
 
-- (Hex *)applyTurn:(Hex *)h :(id <Player>)player {
+- (Hex *)applyMove:(Hex *)h :(id <Player>)player {
     Hex *hex = [self at:h.i :h.j];
     hex.player = player;
     return hex;

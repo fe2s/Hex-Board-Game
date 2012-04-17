@@ -12,13 +12,13 @@
 
 @implementation AIFight
 
-- (id)initWithPlayers:(PlayersPair *)players board:(Board *)board turnTime:(int)turnTime {
+- (id)initWithPlayers:(PlayersPair *)players board:(Board *)board moveTimeLimit:(int)moveTimeLimit {
     self = [super init];
     if (self) {
         _players = players;
         _board = board;
         _gameStatus = [[GameStatus alloc] initNew:_players.first :_players.second];
-        _turnTime = turnTime;
+        _turnLimit = moveTimeLimit;
     }
 
     return self;
@@ -28,18 +28,18 @@
 
     while (!_gameStatus.isEnded) {
         // make turn
-        id <Player> player = _gameStatus.nextTurnPlayer;
-        Hex *hex = [player makeTurn:_board :_turnTime];
+        id <Player> player = _gameStatus.nextMovePlayer;
+        Hex *hex = [player makeMove:_board :_turnLimit];
 
         // validate turn
         if (![[_board at:hex.i :hex.j] isEmpty]){
             @throw [NSException exceptionWithName:nil reason:@"Not valid turn" userInfo:nil];
         }
 
-        [_board applyTurn:hex :player];
+        [_board applyMove:hex :player];
 
         NSLog(@"player [%@]: %@ ", player.name, hex);
-        [_gameStatus toggleTurn];
+        [_gameStatus toggleMove];
 
         // check for winner
         if ([_board findWinnerPath:player]) {

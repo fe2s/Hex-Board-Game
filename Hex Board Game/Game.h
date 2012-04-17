@@ -27,11 +27,11 @@
 
 - (id)initWithView:(UIView *)view;
 
-- (void)onTurnMade;
+- (void)onMoveMade;
 
 - (GameStatus *)status;
 
-- (bool)humanTurn:(CGPoint)touchLocation;
+- (bool)humanMove:(CGPoint)touchLocation;
 
 
 @end
