@@ -23,7 +23,7 @@
 
         _firstPlayer = [[Human alloc] initWithId:1 horizontal:true name:@"vasya"];
 //        _secondPlayer = [[Human alloc] initWithId:2 horizontal:false name:@"petya"];
-        _secondPlayer = [[MonteCarloAI alloc] initWithId:2 horizontal:false name:@"Random AI"];
+        _secondPlayer = [[MonteCarloAI alloc] initWithId:2 horizontal:false name:@"Monte Carlo AI"];
 
         const int defaultSize = 6;
 

@@ -21,7 +21,9 @@
         }
     }
 
-    @throw [NSException exceptionWithName:nil reason:@"opponent not found on board" userInfo:nil];
+    // opponent not found, so this is the first move in game
+    // TODO: not supported at the moment
+    return nil;
 }
 
 - (PlayersPair *)getPlayers:(Board *)board {
