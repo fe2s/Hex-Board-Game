@@ -46,9 +46,8 @@
 
 
 - (void)aiMoveThread:(id)param {
+    NSLog(@"ai move thread started");
     const int moveTimeLimitSec = 5;
-
-    [NSThread sleepForTimeInterval:moveTimeLimitSec];
 
     id <Player> nextPlayer = [_status nextMovePlayer];
     Hex *movePosition = [nextPlayer makeMove:_board :moveTimeLimitSec];
@@ -75,7 +74,7 @@
     if (nextPlayer.isHuman) {
         return;
     } else {
-//        AI move in background thread
+        // AI move in background thread
         [NSThread detachNewThreadSelector:@selector(aiMoveThread:) toTarget:self withObject:nil];
         _status.timeForMoveLeft = 5;
         // ticker background thread

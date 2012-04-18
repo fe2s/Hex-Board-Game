@@ -19,7 +19,6 @@
 
 @implementation MonteCarloTest
 
-// All code under test is in the iOS Application
 - (void)testVsRandom {
 
     RandomAI *ai1 = [[RandomAI alloc] initWithId:1 horizontal:true name:@"ai 1"];
@@ -27,11 +26,35 @@
 
     PlayersPair *players = [[PlayersPair alloc] initWithFirstPlayer:ai1 secondPlayer:ai2];
 
-    Board *board = [[Board alloc] initWithSize:3];
+    Board *board = [[Board alloc] initWithSize:2];
 
     AIFight *fight = [[AIFight alloc] initWithPlayers:players board:board moveTimeLimit:3];
     id <Player> winner = [fight start];
     NSLog(@"winner: %@", winner.name);
+
+}
+
+- (void)testVsRandom_batch {
+
+    RandomAI *ai1 = [[RandomAI alloc] initWithId:1 horizontal:true name:@"ai 1"];
+    MonteCarloAI *ai2 = [[MonteCarloAI alloc] initWithId:2 horizontal:false name:@"Monte Carlo"];
+
+    PlayersPair *players = [[PlayersPair alloc] initWithFirstPlayer:ai1 secondPlayer:ai2];
+
+    const int gamesNum = 1;
+
+    int monteCarloWins = 0;
+    for (int i = 0; i < gamesNum; i++) {
+        Board *board = [[Board alloc] initWithSize:11];
+        AIFight *fight = [[AIFight alloc] initWithPlayers:players board:board moveTimeLimit:1];
+        id <Player> winner = [fight start];
+        if (winner == ai2) {
+            monteCarloWins++;
+        }
+    }
+
+    NSLog(@"monte carlo win rate: %f", monteCarloWins*1.0 / gamesNum);
+
 
 }
 

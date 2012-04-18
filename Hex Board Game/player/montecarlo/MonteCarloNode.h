@@ -15,24 +15,24 @@
 @interface MonteCarloNode : NSObject {
 
     Board *_board;
-    Hex *_turn;
+    Hex *_move;
     MonteCarloNode *_parent;
 
-    NSMutableSet *_undiscovered; // hexes = (board.emptyHexes - children)
+    NSMutableSet *_notVisited; // hexes = (board.emptyHexes - children)
     NSMutableArray *_children; // nodes
 
     id <Player> _winner;
 }
 
 @property(nonatomic, readonly, strong) Board *board;
-@property(nonatomic, readonly, strong) Hex *turn;
+@property(nonatomic, readonly, strong) Hex *move;
 @property(nonatomic, strong) id <Player> winner;
 
 - (id)initWithBoard:(Board *)board:(Hex *)turn:(MonteCarloNode *)parent;
 
 - (NSMutableArray *)children;
 
-- (NSMutableSet *)undiscovered;
+- (NSMutableSet *)notVisited;
 
 - (bool)findWinnerPath;
 

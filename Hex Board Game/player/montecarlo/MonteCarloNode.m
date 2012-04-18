@@ -14,16 +14,16 @@
 @implementation MonteCarloNode
 
 @synthesize board = _board;
-@synthesize turn = _turn;
+@synthesize move = _move;
 @synthesize winner = _winner;
 
-- (id)initWithBoard:(Board *)board:(Hex *)turn:(MonteCarloNode *)parent {
+- (id)initWithBoard:(Board *)board:(Hex *)move:(MonteCarloNode *)parent {
     self = [super init];
     if (self) {
         _board = board;
-        _turn = turn;
+        _move = move;
         _children = [[NSMutableArray alloc] init];
-        _undiscovered = [NSMutableSet setWithArray:_board.emptyHexes];
+        _notVisited = [NSMutableSet setWithArray:_board.emptyHexes];
         _parent = parent;
 //        _winRatio = [[WinRatio alloc] initNew];
     }
@@ -34,8 +34,8 @@
     return _children;
 }
 
-- (NSMutableSet *)undiscovered {
-    return _undiscovered;
+- (NSMutableSet *)notVisited {
+    return _notVisited;
 }
 
 - (bool)isRoot {
@@ -47,9 +47,9 @@
         return false;
     }
 
-    Boolean isWinner = [_board findWinnerPath:_turn.player];
+    Boolean isWinner = [_board findWinnerPath:_move.player];
     if (isWinner) {
-        _winner = _turn.player;
+        _winner = _move.player;
     }
     return isWinner;
 }

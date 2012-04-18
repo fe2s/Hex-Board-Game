@@ -27,8 +27,6 @@
 		FCCF36F2151908190023D983 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC47032F15016ED00004FB52 /* UIKit.framework */; };
 		FCCF36F3151908190023D983 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC47032B15016E8E0004FB52 /* Foundation.framework */; };
 		FCCF36F9151908190023D983 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FCCF36F7151908190023D983 /* InfoPlist.strings */; };
-		FCCF372215190C160023D983 /* AITournament.h in Sources */ = {isa = PBXBuildFile; fileRef = FCE8627C14ED9A9500AEA226 /* AITournament.h */; };
-		FCCF372315190C160023D983 /* AITournament.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE8627C14ED9A9500AEA224 /* AITournament.m */; };
 		FCCF372415190C160023D983 /* AIFight.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE8627C14ED9A9500AEA221 /* AIFight.m */; };
 		FCCF372515190C160023D983 /* AIFight.h in Sources */ = {isa = PBXBuildFile; fileRef = FCE8627C14ED9A9500AEA223 /* AIFight.h */; };
 		FCCF372615190C160023D983 /* GameStatus.h in Sources */ = {isa = PBXBuildFile; fileRef = FCE8627C14ED9A9500AEA213 /* GameStatus.h */; };
@@ -52,7 +50,6 @@
 		FCE8627C14ED9A9500AEA21C /* Human.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE8627C14ED9A9500AEA21B /* Human.m */; };
 		FCE8627C14ED9A9500AEA21F /* RandomAI.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE8627C14ED9A9500AEA21E /* RandomAI.m */; };
 		FCE8627C14ED9A9500AEA222 /* AIFight.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE8627C14ED9A9500AEA221 /* AIFight.m */; };
-		FCE8627C14ED9A9500AEA225 /* AITournament.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE8627C14ED9A9500AEA224 /* AITournament.m */; };
 		FCE8627C14ED9A9500AEA228 /* RandomAIFightTest.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE8627C14ED9A9500AEA227 /* RandomAIFightTest.m */; };
 		FCE8627C14ED9A9500AEA22B /* MonteCarloAI.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE8627C14ED9A9500AEA22A /* MonteCarloAI.m */; };
 		FCE8627C14ED9A9500AEA22C /* MonteCarloAI.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE8627C14ED9A9500AEA22A /* MonteCarloAI.m */; };
@@ -121,8 +118,6 @@
 		FCE8627C14ED9A9500AEA220 /* RandomAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RandomAI.h; sourceTree = "<group>"; };
 		FCE8627C14ED9A9500AEA221 /* AIFight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AIFight.m; path = player/AIFight.m; sourceTree = "<group>"; };
 		FCE8627C14ED9A9500AEA223 /* AIFight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AIFight.h; path = player/AIFight.h; sourceTree = "<group>"; };
-		FCE8627C14ED9A9500AEA224 /* AITournament.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AITournament.m; sourceTree = "<group>"; };
-		FCE8627C14ED9A9500AEA226 /* AITournament.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AITournament.h; sourceTree = "<group>"; };
 		FCE8627C14ED9A9500AEA227 /* RandomAIFightTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RandomAIFightTest.m; path = Tests/RandomAIFightTest.m; sourceTree = SOURCE_ROOT; };
 		FCE8627C14ED9A9500AEA229 /* RandomAIFightTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RandomAIFightTest.h; path = Tests/RandomAIFightTest.h; sourceTree = SOURCE_ROOT; };
 		FCE8627C14ED9A9500AEA22A /* MonteCarloAI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonteCarloAI.m; sourceTree = "<group>"; };
@@ -264,8 +259,6 @@
 			children = (
 				FCE8627C14ED9A9500AEA24A /* WinRatio.m */,
 				FCE8627C14ED9A9500AEA24D /* WinRatio.h */,
-				FCE8627C14ED9A9500AEA226 /* AITournament.h */,
-				FCE8627C14ED9A9500AEA224 /* AITournament.m */,
 				FCE8627C14ED9A9500AEA221 /* AIFight.m */,
 				FCE8627C14ED9A9500AEA223 /* AIFight.h */,
 				FCE8627C14ED9A9500AEA213 /* GameStatus.h */,
@@ -466,7 +459,6 @@
 				FCE8627C14ED9A9500AEA21C /* Human.m in Sources */,
 				FCE8627C14ED9A9500AEA21F /* RandomAI.m in Sources */,
 				FCE8627C14ED9A9500AEA222 /* AIFight.m in Sources */,
-				FCE8627C14ED9A9500AEA225 /* AITournament.m in Sources */,
 				FCE8627C14ED9A9500AEA22B /* MonteCarloAI.m in Sources */,
 				FCE8627C14ED9A9500AEA22F /* AbstractPlayer.m in Sources */,
 				FCE8627C14ED9A9500AEA233 /* AIPlayer.m in Sources */,
@@ -491,8 +483,6 @@
 				FCCF372E15190C200023D983 /* Human.h in Sources */,
 				FCCF372F15190C200023D983 /* Human.m in Sources */,
 				FCCF373015190C200023D983 /* Player.h in Sources */,
-				FCCF372215190C160023D983 /* AITournament.h in Sources */,
-				FCCF372315190C160023D983 /* AITournament.m in Sources */,
 				FCCF372415190C160023D983 /* AIFight.m in Sources */,
 				FCCF372515190C160023D983 /* AIFight.h in Sources */,
 				FCCF372615190C160023D983 /* GameStatus.h in Sources */,

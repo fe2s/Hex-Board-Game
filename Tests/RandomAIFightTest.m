@@ -12,7 +12,7 @@
 @implementation RandomAIFightTest
 
 
-- (void)testExample {
+- (void)testOneFight {
 
     RandomAI *ai1 = [[RandomAI alloc] initWithId:1 horizontal:true name:@"ai 1"];
     RandomAI *ai2 = [[RandomAI alloc] initWithId:2 horizontal:false name:@"ai 2"];
@@ -24,7 +24,8 @@
     AIFight *fight = [[AIFight alloc] initWithPlayers:players board:board moveTimeLimit:3];
     id <Player> winner = [fight start];
     NSLog(@"winner: %@", winner.name);
-
 }
+
+
 
 @end

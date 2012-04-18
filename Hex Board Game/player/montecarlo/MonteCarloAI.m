@@ -53,7 +53,7 @@
         }
 
         // selection: pick random from undiscovered set
-        Hex *selection = [RandomUtils pickAnyFromSet:currNode.undiscovered];
+        Hex *selection = [RandomUtils pickAnyFromSet:currNode.notVisited];
         if (selection == nil) {
             // all discovered, pick child and go down. Simply random for now. TODO: enhance
             currNode = [RandomUtils pickAnyFromArray:currNode.children];
@@ -68,14 +68,14 @@
         if ([currNode isRoot]) {
             player = self;
         } else {
-            player = [players anotherOne:currNode.turn.player];
+            player = [players anotherOne:currNode.move.player];
         }
         Hex *turn = [newChildBoard applyMove:selection :player];
 
         // add to children and remove from undiscovered set
         MonteCarloNode *newChildNode = [[MonteCarloNode alloc] initWithBoard:newChildBoard :turn :currNode];
         [currNode.children addObject:newChildNode];
-        [currNode.undiscovered removeObject:selection];
+        [currNode.notVisited removeObject:selection];
 
         currNode = newChildNode;
     }
@@ -117,10 +117,10 @@
 
     for (MonteCarloNode *child in root.children) {
         WinRatio *ratio = [self calcWinRatio:child];
-        NSLog(@"win ratio %@, games %d", ratio, ratio.games);
+        NSLog(@"win ratio %@, games %d, move %@", ratio, ratio.games, child.move);
         if ([ratio compareTo:bestRatio]) {
             bestRatio = ratio;
-            bestTurn = child.turn;
+            bestTurn = child.move;
         }
     }
 
@@ -133,6 +133,7 @@
 
 
 - (Hex *)makeMove:(Board *)board :(int)moveTimeLimit {
+    NSLog(@"Monte Carlo started");
 
     NSDate *startDate = [NSDate date];
 
