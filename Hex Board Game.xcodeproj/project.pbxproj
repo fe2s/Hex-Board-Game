@@ -67,6 +67,11 @@
 		FCE8627C14ED9A9500AEA245 /* PlayersPair.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE8627C14ED9A9500AEA243 /* PlayersPair.m */; };
 		FCE8627C14ED9A9500AEA24B /* WinRatio.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE8627C14ED9A9500AEA24A /* WinRatio.m */; };
 		FCE8627C14ED9A9500AEA24C /* WinRatio.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE8627C14ED9A9500AEA24A /* WinRatio.m */; };
+		FCE8627C14ED9A9500AEA259 /* MonteCarloAI2.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE8627C14ED9A9500AEA258 /* MonteCarloAI2.m */; };
+		FCE8627C14ED9A9500AEA25A /* MonteCarloAI2.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE8627C14ED9A9500AEA258 /* MonteCarloAI2.m */; };
+		FCE8627C14ED9A9500AEA25D /* MonteCarloNode2.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE8627C14ED9A9500AEA25C /* MonteCarloNode2.m */; };
+		FCE8627C14ED9A9500AEA25E /* MonteCarloNode2.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE8627C14ED9A9500AEA25C /* MonteCarloNode2.m */; };
+		FCE8627C14ED9A9500AEA260 /* DummyAI.m in Sources */ = {isa = PBXBuildFile; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -136,6 +141,10 @@
 		FCE8627C14ED9A9500AEA246 /* PlayersPair.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayersPair.h; sourceTree = "<group>"; };
 		FCE8627C14ED9A9500AEA24A /* WinRatio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WinRatio.m; path = player/montecarlo/WinRatio.m; sourceTree = "<group>"; };
 		FCE8627C14ED9A9500AEA24D /* WinRatio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WinRatio.h; path = player/montecarlo/WinRatio.h; sourceTree = "<group>"; };
+		FCE8627C14ED9A9500AEA257 /* MonteCarloAI2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonteCarloAI2.h; sourceTree = "<group>"; };
+		FCE8627C14ED9A9500AEA258 /* MonteCarloAI2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonteCarloAI2.m; sourceTree = "<group>"; };
+		FCE8627C14ED9A9500AEA25B /* MonteCarloNode2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonteCarloNode2.h; sourceTree = "<group>"; };
+		FCE8627C14ED9A9500AEA25C /* MonteCarloNode2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonteCarloNode2.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -323,6 +332,7 @@
 				FCE8627C14ED9A9500AEA21B /* Human.m */,
 				FCE8627C14ED9A9500AEA21A /* Player.h */,
 				FCE8627C14ED9A9500AEA23A /* montecarlo */,
+				FCE8627C14ED9A9500AEA24E /* montecarlo2 */,
 			);
 			path = player;
 			sourceTree = "<group>";
@@ -336,6 +346,17 @@
 				FCE8627C14ED9A9500AEA22D /* MonteCarloAI.h */,
 			);
 			path = montecarlo;
+			sourceTree = "<group>";
+		};
+		FCE8627C14ED9A9500AEA24E /* montecarlo2 */ = {
+			isa = PBXGroup;
+			children = (
+				FCE8627C14ED9A9500AEA25C /* MonteCarloNode2.m */,
+				FCE8627C14ED9A9500AEA25B /* MonteCarloNode2.h */,
+				FCE8627C14ED9A9500AEA258 /* MonteCarloAI2.m */,
+				FCE8627C14ED9A9500AEA257 /* MonteCarloAI2.h */,
+			);
+			path = montecarlo2;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -467,6 +488,9 @@
 				FCE8627C14ED9A9500AEA240 /* RandomUtils.m in Sources */,
 				FCE8627C14ED9A9500AEA244 /* PlayersPair.m in Sources */,
 				FCE8627C14ED9A9500AEA24B /* WinRatio.m in Sources */,
+				FCE8627C14ED9A9500AEA259 /* MonteCarloAI2.m in Sources */,
+				FCE8627C14ED9A9500AEA25D /* MonteCarloNode2.m in Sources */,
+				FCE8627C14ED9A9500AEA260 /* DummyAI.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,6 +525,8 @@
 				FCE8627C14ED9A9500AEA245 /* PlayersPair.m in Sources */,
 				FCE8627C14ED9A9500AEA24C /* WinRatio.m in Sources */,
 				FC189399153B33E900708E7E /* MonteCarloTest.m in Sources */,
+				FCE8627C14ED9A9500AEA25A /* MonteCarloAI2.m in Sources */,
+				FCE8627C14ED9A9500AEA25E /* MonteCarloNode2.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

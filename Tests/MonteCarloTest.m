@@ -13,6 +13,7 @@
 #import "PlayersPair.h"
 #import "RandomAI.h"
 #import "MonteCarloAI.h"
+#import "MonteCarloAI2.h"
 
 #import <UIKit/UIKit.h>
 //#import "application_headers" as required
@@ -55,7 +56,31 @@
 
     NSLog(@"monte carlo win rate: %f", monteCarloWins*1.0 / gamesNum);
 
+}
+
+- (void)testNewVersion {
+
+    MonteCarloAI *ai1 = [[MonteCarloAI alloc] initWithId:1 horizontal:false name:@"Monte Carlo"];
+    MonteCarloAI *ai2 = [[MonteCarloAI alloc] initWithId:2 horizontal:true name:@"Monte Carlo New"];
+
+    PlayersPair *players = [[PlayersPair alloc] initWithFirstPlayer:ai1 secondPlayer:ai2];
+
+    const int gamesNum = 10;
+    const int boardSize = 5;
+
+    int monteCarloWins = 0;
+    for (int i = 0; i < gamesNum; i++) {
+        Board *board = [[Board alloc] initWithSize:boardSize];
+        AIFight *fight = [[AIFight alloc] initWithPlayers:players board:board moveTimeLimit:1];
+        id <Player> winner = [fight start];
+        if (winner == ai2) {
+            monteCarloWins++;
+        }
+    }
+
+    NSLog(@"monte carlo New win rate: %f", monteCarloWins*1.0 / gamesNum);
 
 }
+
 
 @end

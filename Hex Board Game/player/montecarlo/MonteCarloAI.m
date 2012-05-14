@@ -22,8 +22,8 @@
     }
 
     // opponent not found, so this is the first move in game
-    // TODO: not supported at the moment
-    return nil;
+    // create dummy opponent for simulation
+    return [[AbstractPlayer alloc] initWithId:_id + 1 horizontal:!_horizontal name:@"dummy opponent"];
 }
 
 - (PlayersPair *)getPlayers:(Board *)board {
@@ -41,8 +41,12 @@
 
     // check time every 1000 iteration.
     // note, timeIntervalSinceNow returns negative num
-    while ((iteratesCount++ % 1000 != 0) ||
+    while ((++iteratesCount % 1000 != 0) ||
             [startDate timeIntervalSinceNow] > -turnTimeLimit) {
+
+//        if (currNode == root) {
+//            NSLog(@"Root");
+//        }
 
         Board *board = currNode.board;
 
@@ -56,9 +60,11 @@
 
         // selection: pick random from undiscovered set
         Hex *selection = [RandomUtils pickAnyFromSet:currNode.notVisited];
+//        NSLog(@"not visited selection %@", selection);
         if (selection == nil) {
             // all discovered, pick child and go down. Simply random for now. TODO: enhance
             currNode = [RandomUtils pickAnyFromArray:currNode.children];
+//            NSLog(@"children selection %@", currNode);
             continue;
         }
 
@@ -81,6 +87,7 @@
 
         currNode = newChildNode;
     }
+    NSLog(@"iterates count %d", iteratesCount);
 
 }
 
@@ -135,12 +142,11 @@
 
 
 - (Hex *)makeMove:(Board *)board :(int)moveTimeLimit {
-    NSLog(@"Monte Carlo started");
+    NSLog(@"%@ started", _name);
 
     NSDate *startDate = [NSDate date];
 
     PlayersPair *players = [self getPlayers:board];
-    id <Player> opponent = [players anotherOne:self];
 
     MonteCarloNode *root = [[MonteCarloNode alloc] initWithBoard:board :nil :nil];
 
